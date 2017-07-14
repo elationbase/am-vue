@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/eb-logo.svg" class="eb-logo">
+    <logo></logo>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import Logo from './components/Logo';
+
   export default {
     name: 'app',
+    components: {
+      Logo,
+    },
   };
 </script>
 
@@ -20,6 +25,6 @@
     min-height: 100vh;
   }
   .eb-logo {
-    max-width: 400px;
+    max-width: 160px;
   }
 </style>
