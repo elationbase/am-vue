@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/eb-logo.svg" class="eb-logo">
+    <img src="./assets/alvaro-montero-logo.svg" class="eb-logo">
     <router-view></router-view>
   </div>
 </template>
@@ -20,6 +20,6 @@
     min-height: 100vh;
   }
   .eb-logo {
-    max-width: 400px;
+    max-width: 160px;
   }
 </style>
