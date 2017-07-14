@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'works',
+  name: 'Works',
   data() {
     return {
       msg: 'A Montero Works Component',
