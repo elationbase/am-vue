@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Logo from './components/Logo';
+  import Logo from '@/components/Logo';
 
   export default {
     name: 'app',
@@ -23,8 +23,5 @@
     background-color: var(--dark);
     padding-top: 60px;
     min-height: 100vh;
-  }
-  .eb-logo {
-    max-width: 160px;
   }
 </style>
