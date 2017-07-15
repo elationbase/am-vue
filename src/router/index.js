@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home';
-import Works from '@/components/Works';
+import Home from '@/views/Home';
+import Works from '@/views/Works';
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,7 +14,7 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/works',
+      path: '/works/:id',
       name: 'Works',
       component: Works,
     },
