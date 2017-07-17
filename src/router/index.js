@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home';
-import Works from '@/views/Works';
+import Project from '@/views/Project';
 
 Vue.use(Router);
 
@@ -14,9 +14,9 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/works/:id',
-      name: 'Works',
-      component: Works,
+      path: '/project/:id',
+      name: 'Project',
+      component: Project,
     },
   ],
 });
