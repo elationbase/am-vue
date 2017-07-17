@@ -3,6 +3,7 @@
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 310.8 142.1" style="enable-background:new 0 0 310.8 142.1;" xml:space="preserve">
       <title>AM Logo</title>
+
       <polygon class="st st1" points="62.8,6.3 100.8,6.3 129.2,135 91.1,134.1 "/>
       <polygon class="st st2" points="186.9,6.8 148.3,5.6 156.9,107.8 195.5,109 "/>
       <polygon class="st st2" points="246.9,6.7 208.3,5.6 211.5,133.3 250.5,134.6 "/>
@@ -35,7 +36,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
 .fill {
   opacity: 0;
   animation: fill 0.5s linear forwards;
