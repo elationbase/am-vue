@@ -111,34 +111,21 @@
 }
 
 .logo {
-  width: 140px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40px;
+  left: 40px;
+  transform: translate(0, 0);
+  width: 90px;
   animation: moveLogo 0.75s linear forwards;
-  animation-delay: 3.6s;
   will-change: opacity, width;
+  z-index: 101;
+  opacity: 0;
 }
 @keyframes moveLogo {
-  80% {
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-  }
-  81% {
-    top: 40px;
-    left: 40px;
-    transform: translate(0, 0);
-    opacity: 0;
+  40% {
+    opacity: 1;
   }
   100% {
-    top: 40px;
-    left: 40px;
-    transform: translate(0, 0);
-    width: 90px;
     opacity: 1;
   }
 }
