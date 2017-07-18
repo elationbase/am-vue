@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link :to="{ name: 'Home'}" @click="childLoader">CLOSE</router-link>
     <section v-for="project in projects" :key="project._id">
       <div v-if="project.company === $route.params.id">
         <h1 v-text="project.company"></h1>
@@ -8,7 +9,11 @@
         <img :src="project.picture" alt="">
         <p>{{project.body}}</p>
       </div>
+
     </section>
+    <div v-if="!projectSelected">
+      <p>NOT FOUND</p>
+    </div>
   </div>
 </template>
 
@@ -20,7 +25,16 @@ export default {
     return {
       loading: false,
       projects: getProjects.projects,
+      projectSelected: false,
     };
+  },
+  methods: {
+    checkProject(found) {
+      this.projectSelected = found;
+    },
+    childLoader() {
+      this.$dispatch('loadTimer', this);
+    },
   },
 };
 </script>
