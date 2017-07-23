@@ -4,16 +4,20 @@
     <loader v-if="firstLoad" :speed="8" message="Loading"></loader>
     <loader v-if="loading" :speed="1"></loader>
     <div v-if="ready">
-      <logo></logo>
-      <router-link :to="{ name: 'Home'}" @click="loadTimer">Home</router-link>
-      <ul>
-        <li v-for="project in projects" :key="project.id" @click="loadTimer">
-          <router-link :to="'/project/' + project.company" v-text="project.company" @click="loadTimer"></router-link>
-        </li>
-        <li>
-          <router-link :to="'/project/xxx'">XXXXX</router-link>
-        </li>
-      </ul>
+      <header>
+        <logo></logo>
+        <ul class="main-nav">
+          <li>
+            <router-link :to="{ name: 'Home'}" @click="loadTimer">Home</router-link>
+          </li>
+          <li v-for="project in projects" :key="project.id" @click="loadTimer">
+            <router-link :to="'/project/' + project.company" v-text="project.company" @click="loadTimer"></router-link>
+          </li>
+          <li>
+            <router-link :to="'/project/xxx'">XXXXX</router-link>
+          </li>
+        </ul>
+      </header>
       <router-view></router-view>
     </div>
   </div>
@@ -63,7 +67,24 @@
     padding-top: 60px;
     min-height: 100vh;
   }
+  h1, h2 {
+    font-weight: normal;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
   a {
     color: var(--orange);
+  }
+  .main-nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 </style>
