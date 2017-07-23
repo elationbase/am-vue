@@ -112,8 +112,8 @@
 
 .logo {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 10px;
+  left: 30px;
   transform: translate(0, 0);
   width: 90px;
   animation: moveLogo 0.75s linear forwards;
