@@ -1,23 +1,20 @@
 <template>
   <div class="home">
     <hero></hero>
-    <h1>{{ msg }}</h1>
+    <intro></intro>
   </div>
 </template>
 
 <script>
 
 import Hero from '@/components/Hero';
+import Intro from '@/components/Intro';
 
 export default {
   name: 'home',
   components: {
     Hero,
-  },
-  data() {
-    return {
-      msg: 'Welcome to A Montero Portfolio App',
-    };
+    Intro,
   },
 };
 </script>

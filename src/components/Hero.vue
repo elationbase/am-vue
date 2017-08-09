@@ -41,17 +41,17 @@
     color: white;
   }
   h1 {
-    font-size: 42px;
+    font-size: 4.2rem;
     font-weight: 800;
   }
   h2 {
-    font-size: 26px;
+    font-size: 2.6rem;
   }
   p {
     position: absolute;
     top: 50%;
     left: 50px;
-    font-size: 36px;
+    font-size: 3.6rem;
     color: #623b42;
   }
 </style>

@@ -8,5 +8,9 @@ module.exports = {
       ? config.build.productionSourceMap
       : config.dev.cssSourceMap,
     extract: isProduction
-  })
+  }),
+  scss: 'vue-style-loader!css-loader!sass-loader',
+  transformToRequire: {
+    image: 'xlink:href'
+  }
 }
