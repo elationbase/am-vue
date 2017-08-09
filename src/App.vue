@@ -67,21 +67,6 @@
     padding-top: 60px;
     min-height: 100vh;
   }
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: var(--orange);
-  }
   .main-nav {
     position: absolute;
     right: 20px;
