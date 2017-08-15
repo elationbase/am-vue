@@ -9,6 +9,8 @@ module.exports = {
       : config.dev.cssSourceMap,
     extract: isProduction
   }),
+  postcss: [require('autoprefixer')()],
+  autoprefixer: false,
   scss: 'vue-style-loader!css-loader!sass-loader',
   transformToRequire: {
     image: 'xlink:href'

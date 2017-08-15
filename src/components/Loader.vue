@@ -51,8 +51,7 @@
   fill: transparent;
   stroke:#FFF;
   stroke-miterlimit:1;
-  stroke-dasharray: 400;   /* long  // 380 */
-  /*stroke-dashoffset: 3000;*/
+  stroke-dasharray: 400; 
   will-change: opacity, stroke-dashoffset;
   animation-iteration-count: 100;
 }
