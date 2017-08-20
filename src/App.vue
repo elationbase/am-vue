@@ -54,7 +54,7 @@
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 5500);
+      }, 3000);
     },
   };
 </script>
