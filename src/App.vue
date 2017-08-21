@@ -54,22 +54,10 @@
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 5500);
+      }, 3000);
     },
   };
 </script>
-
-<style>
-  #app {
-    text-align: center;
-    color: var(--midgrey);
-    background-color: var(--dark);
-    padding-top: 60px;
-    min-height: 100vh;
-  }
-  .main-nav {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
+<style lang="sass">
+  @import "src/scss/main";
 </style>

@@ -86,9 +86,8 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
   margin: auto;
-  padding: 10rem 0.1rem;
+  padding: 10rem 20rem;
   header, p {
     width: 100%;
     order: 1;

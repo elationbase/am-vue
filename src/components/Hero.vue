@@ -33,6 +33,16 @@
     position: relative;
     text-transform: uppercase;
     text-align: left;
+    position: relative;
+  }
+  section:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   }
   header {
     position: absolute;
