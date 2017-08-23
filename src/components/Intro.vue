@@ -88,6 +88,10 @@
   text-align: center;
   margin: auto;
   padding: 10rem 20rem;
+  transform: skewY(-2deg) translateY(-3rem);
+   > * {
+     transform: skewY(2deg);
+   }
   header, p {
     width: 100%;
     order: 1;
@@ -111,7 +115,8 @@
     display: flex;
     justify-content: center;
     > li {
-      display: block;
+      flex: 1 1 auto;
+      align-items: stretch;
       font-size: 1.8rem;
       line-height: 1.6;
       color: var(--text);
@@ -121,7 +126,7 @@
       }
     }
     svg {
-      width: 80px;
+      width: 60px;
       height: 80px;
       fill: var(--blue);
     }

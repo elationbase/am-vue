@@ -4,7 +4,7 @@
     <loader v-if="firstLoad" :speed="8" message="Loading"></loader>
     <loader v-if="loading" :speed="1"></loader>
     <div v-if="ready">
-      <header>
+      <header class="main-header">
         <logo></logo>
         <ul class="main-nav">
           <li>
@@ -59,5 +59,5 @@
   };
 </script>
 <style lang="sass">
-  @import "src/scss/main";
+  @import './src/scss/main';
 </style>
