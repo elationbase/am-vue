@@ -139,6 +139,11 @@
   display: flex;
   flex-flow: column;
   padding: 10rem 0.1rem;
+  margin-bottom: 6rem;
+  transform: skewY(-2deg) translateY(3rem);
+   > * {
+     transform: skewY(2deg);
+   }
   header, p {
     width: 100%;
     order: 1;
@@ -181,7 +186,7 @@
       text-align: center;
     }
     svg {
-      width: 120px;
+      width: 80px;
       height: 120px;
       fill: darksalmon;
       .alt {

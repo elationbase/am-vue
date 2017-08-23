@@ -176,6 +176,7 @@
     text-transform: uppercase;
     text-align: left;
     position: relative;
+    transform: skewY(-2deg) translateY(-3rem);
     &:after {
       content: "";
       position: absolute;
@@ -187,6 +188,7 @@
       background: linear-gradient(to bottom, rgba(0,0,0,0) 60%,rgba(0,0,0,0.5) 100%);
     }
     &__images {
+      transform: skewY(2deg) translateY(3rem);
       li {
         position: absolute;
         top: 0;

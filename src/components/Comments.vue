@@ -1,19 +1,28 @@
 <template>
-  <div class="slider-container">
-    <div class="menu">
-      <label for="slide-dot-1"></label>
-      <label for="slide-dot-2"></label>
-      <label for="slide-dot-3"></label>
-    </div>
-
-    <input id="slide-dot-1" type="radio" name="slides" checked>
-      <div class="slide slide-1"></div>
-
-    <input id="slide-dot-2" type="radio" name="slides">
-      <div class="slide slide-2"></div>
-
-    <input id="slide-dot-3" type="radio" name="slides">
-      <div class="slide slide-3"></div>
+  <div class="comments">
+    <h2>What People Say About Me</h2>
+    <ul>
+      <li>
+        <div class="comments__container">
+          <p>Alvaro leverages his extensive domain knowledge to build confidence with stakeholders and effectively influence their design decisions. I have no reservations with Alvaro leading stakeholder meetings or design discussions.</p>
+        </div>
+      </li>
+      <li>
+        <div class="comments__container">
+          <p>When presented with a problem, Alvaro is tenacious, not resting until a suitable solution is found.</p>
+        </div>
+      </li>
+      <li>
+        <div class="comments__container">
+          <p>Alvaro's clear understanding of his craft and ability to deliver have fostered a solid relationship with both our stakeholders and his team.</p>
+        </div>
+      </li>
+      <li>
+        <div class="comments__container">
+          <p>Alvaro is never satisfied with the status quo. He is constantly looking to introduce new and innovative user experiences. His drive continuously pushes the rest of the team to excel.</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -22,63 +31,85 @@
   };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-.slider-container{
-  height: 60vh;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+<style lang="scss">
+.comments, .comments ul, .comments li {
+	height: 70vh;
 }
 
-.menu {
-  position: absolute;
-  left: 0;
-  z-index: 900;
-  width: 100%;
-  bottom: 0;
-}
-
-.menu label {
-  cursor: pointer;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 50px;
-  margin: 0 .2em 1em;
-  &:hover {
-    background: red;
+.comments {
+	margin: auto;
+	overflow: hidden;
+	padding: 5rem;
+	position: relative;
+	width: 100%;
+  h2 {
+    font-size: 4.2rem;
+    font-weight: 200;
+    margin-bottom: 2rem;
+    color: var(--blue);
+    text-align: center;
+  }
+  ul {
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	width: 400%;
+    will-change: transition;
+  	transition: left .3s ease-out;
+    animation: slide-animation 25s infinite;
+    &:hover{
+    	animation-play-state: paused;
+    }
+  }
+  li {
+  	float: left;
+  	position: relative;
+  	width: 25%;
+  	display: inline-block;
+  }
+  p {
+    font-size: 3.6rem;
+    line-height: 1.6;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translate(0, -50%);
+    padding: 0 15rem;
+  }
+  &__container {
+  	width: 100%;
   }
 }
 
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 10;
-  padding: 8em 1em 0;
-  background-size: cover;
-  background-position: 50% 50%;
-  transition: left 0s .75s;
+
+
+@-webkit-keyframes slide-animation {
+	20% {
+	  left: 0;
+  }
+	25% {
+	  left: -100%;
+  }
+	45% {
+	  left: -100%;
+  }
+	50% {
+	  left: -200%;
+  }
+	70% {
+	  left: -200%;
+  }
+	75% {
+	  left: -300%;
+  }
+	98% {
+	  left: -300%;
+  }
+	100% {
+	  left: 0;
+  }
 }
 
-[id^="slide"]:checked + .slide {
-  left: 0;
-  z-index: 100;
-  transition: left .65s ease-out;
-}
-
-.slide-1 {
-  background-image: url("https://source.unsplash.com/t7YycgAoVSw/1600x900");
-}
-.slide-2 {
-  background-image: url("https://source.unsplash.com/11H1SSVcIxc/1600x900");
-}
-.slide-3 {
-  background-image: url("https://source.unsplash.com/OlZ1nWLEEgM/1600x900");
-}
 </style>
