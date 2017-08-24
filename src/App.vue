@@ -20,6 +20,7 @@
       </header>
       <router-view></router-view>
     </div>
+    <MainFooter></MainFooter>
   </div>
 </template>
 
@@ -27,12 +28,14 @@
   import Logo from '@/components/Logo';
   import Loader from '@/components/Loader';
   import getProjects from '@/api/projects';
+  import MainFooter from '@/components/Footer';
 
   export default {
     name: 'app',
     components: {
       Logo,
       Loader,
+      MainFooter,
     },
     data() {
       return {
