@@ -7,9 +7,6 @@
         <p v-text="desciption"></p>
     </section>
     <section class="intro__section">
-      <header>
-        <h3>Stuff I Like to Play With</h3>
-      </header>
       <ul class="intro__list">
         <li v-for="skill in skills" :key="skill.key">
           <svg :class="skill.icon">
@@ -62,7 +59,7 @@
             items: ['HTML', 'SaSS/PostCSS', 'JavaScript', 'JSON/REST'],
           },
           third: {
-            title: 'Development',
+            title: 'Open Source',
             icon: 'icon-frameworks',
             items: ['VueJS', 'Angular', 'Webpack', 'Gulp/NPM'],
           },
@@ -85,56 +82,40 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
   margin: auto;
   padding: 10rem 20rem;
   transform: skewY(-2deg) translateY(-3rem);
    > * {
      transform: skewY(2deg);
    }
-  header, p {
-    width: 100%;
-    order: 1;
-  }
   h2 {
     font-size: 4.2rem;
     font-weight: 200;
     margin-bottom: 2rem;
     color: var(--blue);
   }
-  h3 {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-    font-weight: 200;
-    color: var(--light);
-  }
   &__section {
     margin-bottom: 3rem;
   }
   &__list {
-    display: flex;
-    justify-content: center;
     > li {
-      flex: 1 1 auto;
-      align-items: stretch;
       font-size: 1.8rem;
       line-height: 1.6;
       color: var(--text);
-      padding: 0 3rem;
-      li {
-
-      }
+      padding: 0 12rem 4rem 0;
+      display: inline-block;
     }
     svg {
-      width: 60px;
-      height: 80px;
-      fill: var(--blue);
+      width: 46px;
+      height: 50px;
+      fill: darksalmon;
     }
     p {
       font-size: 2.2rem;
+      line-height: 1;
       text-transform: uppercase;
       margin-bottom: 6px;
-      color: var(--light);
+      color: darksalmon;
     }
   }
 }
