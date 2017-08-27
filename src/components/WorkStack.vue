@@ -1,6 +1,6 @@
 <template>
   <article class="stack">
-    <h2 v-text="headline"></h2>
+    <h2 v-text="headline" class="eb-type-h2"></h2>
     <ul class="stack__list">
       <li v-for="tool in tools" :key="tools.key">
         <svg :class="tool.icon">
@@ -81,7 +81,7 @@
             icon: 'icon-css',
           },
           4: {
-            title: 'SaSS',
+            title: 'Sass',
             icon: 'icon-sass',
           },
           5: {
@@ -120,6 +120,10 @@
           //   title: 'Sentry',
           //   icon: 'icon-sentry',
           // },
+          // 13: {
+          //   title: 'Firebug',
+          //   icon: 'icon-firebug',
+          // },
         },
       };
     },
@@ -127,76 +131,55 @@
 </script>
 
 <style lang="scss">
-.cls-1 {
-  fill: none;
-  stroke: #333;
-  stroke-miterlimit: 10;
-}
+@import "../scss/utilities/base";
+
 .stack {
-  background-color: var(--dark);
+  background-color: theme-get(background, alternate);
   min-height: 75vh;
   position: relative;
   display: flex;
   flex-flow: column;
-  padding: 10rem 0.1rem;
-  margin-bottom: 6rem;
+  padding-top: theme-get(space, bigger);
+  padding-bottom: theme-get(space, bigger);
+  margin-bottom: theme-get(space, big);
   transform: skewY(-2deg) translateY(3rem);
-   > * {
-     transform: skewY(2deg);
-   }
-  header, p {
-    width: 100%;
-    order: 1;
+  > * {
+    transform: skewY(2deg);
   }
   h2 {
-    font-size: 4.2rem;
-    font-weight: 200;
-    margin-bottom: 2rem;
-    color: var(--blue);
     text-align: center;
-  }
-  h3 {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
-    font-weight: 200;
-    color: var(--light);
-  }
-  &__section {
-    margin-bottom: 3rem;
   }
   &__list {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
     > li {
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
       align-items: center;
-      flex: 0 1 300px;
-      padding: 3rem;
-      min-height: 250px;
-      font-size: 1.8rem;
-      line-height: 1.6;
-      color: var(--text);
-      padding: 0 3rem;
-      border: 0.5rem solid var(--dark);
+      @include phone {
+        flex: 0 1 120px;
+      }
+      @include tablet {
+        flex: 0 1 180px;
+      }
+      @include large {
+      flex: 0 1 250px;
+      }
+      padding: theme-get(space, normal);
+      font-size: theme-get(text, size, root);
       text-align: center;
     }
     svg {
-      width: 80px;
-      height: 120px;
-      fill: darksalmon;
-      .alt {
-        fill: darken(darksalmon, 50%);
-      }
+      width: theme-get(icon-size, normal);
+      height: theme-get(icon-size, normal);
+      fill: $color-salmon;
     }
     p {
-      font-size: 1.6rem;
-      margin-top: 0.6rem;
-      color: var(--light);
+      margin-top: theme-get(space, normal);
     }
   }
 }

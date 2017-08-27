@@ -2,8 +2,8 @@
 <template>
   <section class="hero">
       <header>
-        <h1 v-text="name"></h1>
-        <h2 v-text="position"></h2>
+        <h1 v-text="name" class="eb-type-h1"></h1>
+        <h2 v-text="position" class="eb-type-h2-alt"></h2>
         <p v-text="tag"></p>
       </header>
       <ul class="hero__images">
@@ -167,119 +167,105 @@
 </script>
 
 <style lang="scss">
-  .hero {
-    background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(223,228,231,1) 100%);
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 85vh;
-    position: relative;
-    text-transform: uppercase;
-    text-align: left;
-    position: relative;
-    transform: skewY(-2deg) translateY(-3rem);
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 60%,rgba(0,0,0,0.5) 100%);
-    }
-    &__images {
-      transform: skewY(2deg) translateY(3rem);
-      li {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        &:last-child {
-          position: static;
-          opacity: 0;
-          animation: opacity 2s linear forwards;
-        }
-      }
-      img {
-        max-width: 100%;
-      }
+@import "../scss/utilities/base";
 
-      .st0 {
-        fill: transparent;
-        stroke: var(--dark);
-        stroke-miterlimit:1;
-        stroke-dasharray: 400;
-        will-change: stroke-dashoffset;
-        stroke-dasharray: 2000;
-        stroke-dashoffset: 2000;
-        animation: dash 5s linear forwards;
-      }
-      &__camera .st0 {
-        animation-delay: 1s;
-      }
-      &__phone .st0 {
-        animation-delay: 2s;
-      }
-      &__tablet .st0 {
-        animation-delay: 3s;
-      }
-      &__notebook .st0 {
-        animation-delay: 4s;
-      }
-      &__ipad .st0 {
-        animation-delay: 5s;
-      }
-      &__cups .st0 {
-        animation-delay: 6s;
-      }
-      &__keyboard .st0 {
-        animation-delay: 5s;
-      }
-      &__keyboard .st0 {
-        animation-delay: 5s;
-      }
-      &__bg {
+.hero {
+  background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(223,228,231,1) 100%);
+  min-height: 85vh;
+  @include phone {
+    min-height: 75vh;
+  }
+  position: relative;
+  @include skew(left, null, null);
+  &:after {
+    content: "";
+    @include full('absolute');
+    z-index: z-index(hero2);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 60%,rgba(0,0,0,0.5) 100%);
+  }
+  &__images {
+    @include skew(null, 2deg, 3rem);
+    li {
+      @include full('absolute');
+      z-index: z-index(hero1);
+      max-width: 2000px;
+      margin: auto;
+      &:last-child {
+        position: static;
         opacity: 0;
         animation: opacity 2s linear forwards;
-        animation-delay: 6s;
+          @include skew(null, 0, -3rem -3em);
       }
     }
-    header {
-      position: absolute;
-      z-index: 1;
-      top: 42%;
-      left: 50%;
-      color: white;
-      transform: translate(-50%);
-      text-align: center;
+    img {
+      max-width: 100%;
+    }
+    @include phone {
+      img, svg {
+        max-width: none;
+        width: 200%;
+      }
+    }
+    .st0 {
+      fill: transparent;
+      stroke: $color-dark;
+      stroke-miterlimit:1;
+      will-change: stroke-dashoffset;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: dashHero 5s linear forwards;
+    }
+    &__camera .st0 {
+      animation-delay: 1s;
+    }
+    &__phone .st0 {
+      animation-delay: 2s;
+    }
+    &__laptop .st0 {
+      animation-delay: 3s;
+    }
+    &__notebook .st0 {
+      animation-delay: 4s;
+    }
+    &__ipad .st0 {
+      animation-delay: 5s;
+    }
+    &__cups .st0 {
+      animation-delay: 6s;
+    }
+    &__keyboard .st0 {
+      animation-delay: 5s;
+    }
+    &__bg {
       opacity: 0;
       animation: opacity 2s linear forwards;
-      animation-delay: 7s;
-    }
-    h1 {
-      font-size: 4.2rem;
-      font-weight: 800;
-      color: var(--dark);
-    }
-    h2 {
-      font-size: 2.6rem;
-      padding-bottom: 0.6rem;
-      color: var(--blue);
-    }
-    p {
-      font-size: 3.6rem;
-      color: var(--orange);
-    }
-    @keyframes dash {
-      100% {
-        stroke-dashoffset: 0;
-      }
-    }
-    @keyframes opacity {
-      100% {
-        opacity: 1;
-      }
+      animation-delay: 6s;
     }
   }
+  header {
+    position: absolute;
+    z-index: z-index(hero3);
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include small {
+      bottom: 50px;
+      width: 80%;
+    }
+    @include large {
+      top: 45%;
+    }
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: opacity 2s linear forwards;
+    animation-delay: 7s;
+  }
+  p {
+    font-size: theme-get(text, size, bigger);
+    font-weight: theme-get(space, extra);
+    margin: theme-get(space, none);
+    color: theme-get(text, color, orange);
+  }
+}
 </style>

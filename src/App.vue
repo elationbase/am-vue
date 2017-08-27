@@ -1,66 +1,91 @@
 
 <template>
   <div id="app">
-    <loader v-if="firstLoad" :speed="8" message="Loading"></loader>
-    <loader v-if="loading" :speed="1"></loader>
-    <div v-if="ready">
-      <header class="main-header">
-        <logo></logo>
-        <ul class="main-nav">
-          <li>
-            <router-link :to="{ name: 'Home'}" @click="loadTimer">Home</router-link>
-          </li>
-          <li v-for="project in projects" :key="project.id" @click="loadTimer">
-            <router-link :to="'/project/' + project.company" v-text="project.company" @click="loadTimer"></router-link>
-          </li>
-          <li>
-            <router-link :to="'/project/xxx'">XXXXX</router-link>
-          </li>
-        </ul>
-      </header>
-      <router-view></router-view>
-    </div>
-    <MainFooter></MainFooter>
+
+    <app-loader v-if="firstLoad" :speed="8" message="Loading"></app-loader>
+
+    <main v-show="ready" v-if="!selectedProject">
+      <app-header></app-header>
+      <home-hero></home-hero>
+      <my-intro></my-intro>
+      <projects v-on:projectShow="showProject"></projects>
+      <work-stack></work-stack>
+      <comments-section></comments-section>
+      <app-footer v-show="ready"></app-footer>
+    </main>
+
+    <project-page v-else v-on:projectHide="hideProject" :projectPass="project"></project-page>
+
   </div>
 </template>
 
 <script>
-  import Logo from '@/components/Logo';
-  import Loader from '@/components/Loader';
-  import getProjects from '@/api/projects';
-  import MainFooter from '@/components/Footer';
+  import api from '@/api/projects';
+  import AppHeader from '@/components/AppHeader';
+  import AppLoader from '@/components/AppLoader';
+  import AppFooter from '@/components/AppFooter';
+  import HomeHero from '@/components/HomeHero';
+  import MyIntro from '@/components/MyIntro';
+  import Projects from '@/components/Projects';
+  import WorkStack from '@/components/WorkStack';
+  import CommentsSection from '@/components/CommentsSection';
+  import ProjectPage from '@/views/ProjectPage';
 
   export default {
     name: 'app',
     components: {
-      Logo,
-      Loader,
-      MainFooter,
+      AppHeader,
+      AppLoader,
+      AppFooter,
+      HomeHero,
+      MyIntro,
+      Projects,
+      WorkStack,
+      CommentsSection,
+      ProjectPage,
     },
     data() {
       return {
-        projects: getProjects.projects,
+        projects: api.projects,
         loading: false,
         firstLoad: true,
         ready: false,
+        selectedProject: false,
+        project: {},
       };
     },
     methods: {
+      showProject(project) {
+        this.selectedProject = true;
+        this.project = project;
+      },
+      hideProject() {
+        this.selectedProject = false;
+        this.project = {};
+      },
       loadTimer() {
         this.loading = true;
-        setTimeout(() => {
-          this.loading = false;
-        }, 2000);
+        // setTimeout(() => {
+        //   this.loading = false;
+        // }, 2000);
+      },
+    },
+    computed: {
+      setPosition(x, y) {
+        return x + y;
+      },
+      getPosition() {
+        return this.setPosition();
       },
     },
     mounted() {
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 3000);
+      }, 500);
     },
   };
 </script>
-<style lang="sass">
+<style lang="scss">
   @import './src/scss/main';
 </style>

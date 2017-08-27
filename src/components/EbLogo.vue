@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 310.8 142.1" style="enable-background:new 0 0 310.8 142.1;" xml:space="preserve">
 
       <polygon class="st st1" points="62.8,6.3 100.8,6.3 129.2,135 91.1,134.1 "/>
@@ -33,7 +33,9 @@
   };
 </script>
 
-<style>
+<style lang="scss">
+@import "../scss/utilities/base";
+
 .fill {
   opacity: 0;
   animation: fill 0.5s linear forwards;
@@ -57,11 +59,6 @@
 .fill4 {
     animation-delay: 2.8s
 }
-@keyframes fill {
-  to {
-    opacity: 1;
-  }
-}
 
 .path {
   fill: transparent;
@@ -69,7 +66,7 @@
   stroke-miterlimit:10;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 2.5s linear forwards;
+  animation: dashLogo 2.5s linear forwards;
 }
 .path2 {
   animation-delay: 0.4s
@@ -80,19 +77,10 @@
 .path4 {
   animation-delay: 1.2s
 }
-@keyframes dash {
-  95% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 .st {
   transform: scaleY(0) skewX(-25deg);
-  animation: skew 0.4s linear forwards;
+  animation: skewLogo 0.4s linear forwards;
   animation-delay: 3.2s
 }
 .st1 {
@@ -102,26 +90,11 @@
 .st2 {
     fill:#E44F26;
 }
-@keyframes skew {
-  to {
-    transform: scaleY(1) skewX(0);
-  }
-}
 
 .logo {
   transform: translate(0, 0);
-  width: 90px;
   animation: moveLogo 0.75s linear forwards;
   will-change: opacity, width;
-  z-index: 101;
   opacity: 0;
-}
-@keyframes moveLogo {
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 </style>

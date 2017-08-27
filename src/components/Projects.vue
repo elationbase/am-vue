@@ -3,48 +3,48 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="project" :class="{ 'project--x2': project.important }">
-          <router-link :to="'/project/' + project.company">
+          <a href="#" v-on:click.prevent="showProject(project)">
             <div class="project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <h2 v-text="project.name"></h2>
             <div class="project__slide">
               <p v-text="project.project"></p>
             </div>
-          </router-link>
+          </a>
         </section>
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="project" :class="{ 'project--x2': project.important }">
-          <router-link :to="'/project/' + project.company">
+          <a :href="'/project/' + project.company">
             <div class="project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <h2 v-text="project.name"></h2>
             <div class="project__slide">
               <p v-text="project.project"></p>
             </div>
-          </router-link>
+          </a>
         </section>
       </div>
     </div>
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="project" :class="{ 'project--x2': project.important }">
-          <router-link :to="'/project/' + project.company">
+          <a :href="'/project/' + project.company">
             <div class="project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <h2 v-text="project.name"></h2>
             <div class="project__slide">
               <p v-text="project.project"></p>
             </div>
-          </router-link>
+          </a>
         </section>
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="project" :class="{ 'project--x2': project.important }">
-          <router-link :to="'/project/' + project.company">
+          <a :href="'/project/' + project.company">
             <div class="project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <h2 v-text="project.name"></h2>
             <div class="project__slide">
               <p v-text="project.project"></p>
             </div>
-          </router-link>
+          </a>
         </section>
       </div>
     </div>
@@ -57,6 +57,9 @@
 
   export default {
     methods: {
+      showProject(project) {
+        this.$emit('projectShow', project);
+      },
       getSize() {
         return Object.keys(getProjects.projects).length;
       },
@@ -83,6 +86,7 @@
       return {
         projects: getProjects.projects,
         projectSplit: this.getHalfSize(),
+        counter: 0,
       };
     },
   };
@@ -95,6 +99,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  padding: 0 1rem;
   &__group {
     flex: 1 1 auto;
     display: flex;
@@ -127,7 +132,7 @@
   position: relative;
   color: #fff;
   min-height: 300px;
-  margin: 1rem;
+  margin: 2rem 1rem;
   &--x2 {
     min-height: 600px;
   }
