@@ -1,0 +1,35 @@
+/// Set the proper default text color for text.
+
+body {
+  background-color: theme-get(background, primary);
+  color: theme-get(text, color, default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/// Block level elements should have a consistent margin spacing.
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, blockquote {
+  margin: {
+    top: 0;
+    bottom: theme-get(block, margin);
+  }
+}
+
+/// Set h-tag elements to the appropriate color.
+h1, h2, h3, h4, h5, h6 {
+  font-weight: theme-get(weight, normal);
+}
+ul, ol {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ color: theme-get(text, default);
+}
+a {
+  color: theme-get(link, color);
+}
+p {
+  color: theme-get(text, default);
+}

@@ -1,0 +1,36 @@
+
+///
+/// Define a default color theme with the color palette.
+///
+$theme: (
+  background: (
+    primary: $color-light,
+    alternate: $color-dark
+  ),
+  border: (
+    width: 0.0625rem,
+    color: $color-gray,
+    style: solid
+  ),
+  block: (
+    margin: 1.5rem
+  ),
+  text: (
+    color: (
+      default: $color-text,
+      light: $color-gray
+    ),
+    size: (
+      root: 1rem,
+      small: 0.875rem
+    )
+  ),
+  link: (
+    color: $color-blue
+  ),
+  headers: (
+    h1: (
+      color: $color-black
+    )
+  )
+);

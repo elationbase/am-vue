@@ -1,0 +1,79 @@
+
+///
+/// Define a default theme.
+///
+$theme: (
+  background: (
+    primary: $color-lt-gray,
+    alternate: $color-dark
+  ),
+  border: (
+    width: 0.0625rem,
+    color: $color-gray,
+    style: solid
+  ),
+  block: (
+    margin: 1.5rem
+  ),
+  text: (
+    color: (
+      default: $color-text,
+      light: $color-gray,
+      dark: $color-dark,
+      blue: $color-blue,
+      orange: $color-orange
+    ),
+    size: (
+      root: 1.8rem,
+      huge: 4.6rem,
+      bigger: 3.6rem,
+      lg: 2.6rem,
+      small: 1.4rem
+    )
+  ),
+  link: (
+    color: $color-blue
+  ),
+  space: (
+    huge: 18rem,
+    bigger: 10rem,
+    big: 5rem,
+    normal: 2.5rem,
+    small: 1rem,
+    none: 0
+  ),
+  weight: (
+    extra: 800,
+    bold: 600,
+    normal: 400,
+    light: 200
+  ),
+  icon-size: (
+    huge: 200px,
+    big: 120px,
+    normal: 80px,
+    small: 50px,
+    tiny: 30px,
+  ),
+  headers: (
+    h1: (
+      color: $color-dark,
+      font-size: 4.2rem,
+      font-weight: 800
+    ),
+    h2: (
+      primary: (
+        font-size: 4.2rem,
+        font-weight: 300,
+        margin-bottom: 2rem,
+        color: $color-blue
+      ),
+      alternative: (
+        font-size: 2.6rem,
+        font-weight: 300,
+        margin-bottom: 0,
+        color: $color-blue
+      )
+    )
+  )
+);
