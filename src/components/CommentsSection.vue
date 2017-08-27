@@ -1,6 +1,6 @@
 <template>
   <div class="comments">
-    <h2>What People Say About Me</h2>
+    <h2 class="eb-type-h2">What People Say About Me</h2>
     <ul>
       <li>
         <div class="comments__container">
@@ -32,30 +32,24 @@
 </script>
 
 <style lang="scss">
-.comments, .comments ul, .comments li {
-	height: 70vh;
-}
+@import "../scss/utilities/base";
 
 .comments {
 	margin: auto;
 	overflow: hidden;
-	padding: 5rem;
-	position: relative;
-	width: 100%;
+  @include small {
+	   padding: theme-get(space, small);
+  }
+  @include large {
+    padding: theme-get(space, big);
+  }
   h2 {
-    font-size: 4.2rem;
-    font-weight: 200;
-    margin-bottom: 2rem;
-    color: var(--blue);
     text-align: center;
   }
   ul {
-  	position: absolute;
-  	left: 0;
-  	top: 0;
   	width: 400%;
+    margin-bottom: theme-get(space, normal);
     will-change: transition;
-  	transition: left .3s ease-out;
     animation: slide-animation 25s infinite;
     &:hover{
     	animation-play-state: paused;
@@ -68,47 +62,18 @@
   	display: inline-block;
   }
   p {
-    font-size: 3.6rem;
-    line-height: 1.6;
+    @include small {
+      padding-left: theme-get(space, small);
+      padding-right: theme-get(space, small);
+    }
+    @include large {
+      padding-left: theme-get(space, bigger);
+      padding-right: theme-get(space, bigger);
+    }
     text-align: center;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
-    transform: translate(0, -50%);
-    padding: 0 15rem;
   }
   &__container {
   	width: 100%;
-  }
-}
-
-
-
-@-webkit-keyframes slide-animation {
-	20% {
-	  left: 0;
-  }
-	25% {
-	  left: -100%;
-  }
-	45% {
-	  left: -100%;
-  }
-	50% {
-	  left: -200%;
-  }
-	70% {
-	  left: -200%;
-  }
-	75% {
-	  left: -300%;
-  }
-	98% {
-	  left: -300%;
-  }
-	100% {
-	  left: 0;
   }
 }
 

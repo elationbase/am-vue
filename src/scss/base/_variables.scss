@@ -1,0 +1,53 @@
+// ////
+// /// Declare common variables.
+// ////
+//
+// ///
+// /// Color palette
+// ///
+// $color-white: #ffffff;
+// $color-black: #000000;
+// $color-lt-gray: #f9f9f9;
+// $color-gray: #efefef;
+// $color-md-gray: #9e9e9e;
+// $color-md-dk-gray: #555555;
+// $color-dk-gray: #666666;
+// $color-orange: #ff9800;
+// $color-blue: #128ced;
+//
+// ///
+// /// Define a default color theme with the color palette.
+// ///
+// $theme: (
+//   background: (
+//     primary: $color-white,
+//     alternate: $color-lt-gray
+//   ),
+//   border: (
+//     width: 0.0625rem,
+//     color: $color-gray,
+//     style: solid
+//   ),
+//   block: (
+//     margin: 1.5rem
+//   ),
+//   text: (
+//     color: (
+//       default: $color-dk-gray,
+//       light: $color-md-gray
+//     ),
+//     size: (
+//       root: 1rem,
+//       small: 0.875rem
+//     )
+//   ),
+//   link: (
+//     color: $color-blue
+//   ),
+//   headers: (
+//     color: $color-md-dk-gray,
+//     h1: (
+//       color: $color-black
+//     )
+//   )
+// );

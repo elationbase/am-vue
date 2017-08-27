@@ -1,0 +1,33 @@
+// Media Query mixin and breakponts
+
+$breakpoints: (
+  "phone":        320px,
+  "phone-wide":   480px,
+  "tablet":       768px,
+  "desktop":      1025px,
+  "desktop-wide": 1248px
+);
+
+@mixin phone {
+  @media (max-width: map_get($breakpoints, tablet) - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: map_get($breakpoints, tablet)) and (max-width: map_get($breakpoints, desktop) - 1px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: map_get($breakpoints, desktop) - 1px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: map_get($breakpoints, desktop)) {
+    @content;
+  }
+}

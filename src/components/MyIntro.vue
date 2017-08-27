@@ -2,7 +2,7 @@
   <article class="intro">
     <section class="intro__section">
         <header>
-          <h2 v-text="headline"></h2>
+          <h2 v-text="headline" class="eb-type-h2"></h2>
         </header>
         <p v-text="desciption"></p>
     </section>
@@ -56,7 +56,7 @@
           second: {
             title: 'Code',
             icon: 'icon-code',
-            items: ['HTML', 'SaSS/PostCSS', 'JavaScript', 'JSON/REST'],
+            items: ['HTML', 'Sass/PostCSS', 'JavaScript', 'JSON/REST'],
           },
           third: {
             title: 'Open Source',
@@ -75,47 +75,69 @@
 </script>
 
 <style lang="scss">
+@import "../scss/utilities/base";
+
 .intro {
-  background-color: var(--dark);
+  background-color: theme-get(background, alternate);
   min-height: 75vh;
   position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  padding: 10rem 20rem;
-  transform: skewY(-2deg) translateY(-3rem);
-   > * {
-     transform: skewY(2deg);
-   }
-  h2 {
-    font-size: 4.2rem;
-    font-weight: 200;
-    margin-bottom: 2rem;
-    color: var(--blue);
+  @include phone {
+    padding: theme-get(space, big);
   }
+  @include tablet {
+    padding: theme-get(space, bigger);
+  }
+  @include large {
+    padding-top: theme-get(space, bigger);
+    padding-bottom: theme-get(space, bigger);
+    padding-left: theme-get(space, huge);
+    padding-right: theme-get(space, huge);
+  }
+  @include small {
+    text-align: center;
+  }
+  @include skew(left, null, null);
   &__section {
-    margin-bottom: 3rem;
+    margin-bottom: theme-get(space, big);
+  }
+  p {
+    color: $color-light;
   }
   &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     > li {
-      font-size: 1.8rem;
+      @include phone {
+        flex: 0 0 50%;
+        text-align: center;
+      }
+      @include tablet {
+        flex: 0 0 25%;
+      }
+      @include large {
+        flex: 0 0 200px;
+      }
+      font-size: theme-get(text, size, root);
       line-height: 1.6;
-      color: var(--text);
-      padding: 0 12rem 4rem 0;
       display: inline-block;
+      margin-bottom: theme-get(space, normal);
     }
     svg {
-      width: 46px;
-      height: 50px;
-      fill: darksalmon;
+      width: theme-get(icon-size, small);
+      height: theme-get(icon-size, small);
+      fill: $color-salmon;
     }
     p {
-      font-size: 2.2rem;
+      font-size: theme-get(text, size, root);
       line-height: 1;
       text-transform: uppercase;
-      margin-bottom: 6px;
-      color: darksalmon;
+      margin-bottom: theme-get(space, small);
+      color: $color-salmon;
     }
   }
 }

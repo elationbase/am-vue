@@ -1,0 +1,21 @@
+$z-index: (
+  loader             : 200,
+  project1           : 101,
+  project2           : 102,
+  project3           : 103,
+  project4           : 104,
+  header             : 50,
+  hero1              : 11,
+  hero2              : 12,
+  hero3              : 13,
+  base               : 1,
+  off                : -1,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}

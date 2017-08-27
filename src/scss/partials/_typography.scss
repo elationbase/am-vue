@@ -1,0 +1,73 @@
+@import url('//fonts.googleapis.com/css?family=Montserrat:200,400,600,800');
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: theme-get(text, color, default);
+
+  @include phone {
+    font-size: 8px;
+  }
+  @include tablet {
+    font-size: 9px;
+  }
+  @include large {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-size: theme-get(text, size, root);
+  font-weight: theme-get(weight, normal);
+}
+
+.eb-type {
+  &-h1 {
+    font-weight: theme-get(weight, extra);
+    color: theme-get(text, color, dark);
+    @include small {
+      font-size: theme-get(text, size, bigger);
+      margin-bottom: theme-get(space, none);
+    }
+    @include large {
+      font-size: theme-get(text, size, huge);
+      margin-bottom: theme-get(space, none);
+    }
+  }
+  &-h2 {
+    font-weight: theme-get(weight, light);
+    color: theme-get(text, color, blue);
+    @include small {
+      font-size: theme-get(text, size, bigger);
+      margin-bottom: theme-get(space, normal);
+    }
+    @include large {
+      font-size: theme-get(text, size, huge);
+      margin-bottom: theme-get(space, normal);
+    }
+    &-alt {
+      font-weight: theme-get(weight, extra);
+      color: theme-get(text, color, blue);
+      @include small {
+        font-size: theme-get(text, size, bigger);
+        margin-bottom: theme-get(space, none);
+      }
+      @include large {
+        font-size: theme-get(text, size, lg);
+        margin-bottom: theme-get(space, none);
+      }
+    }
+  }
+  &-h3 {
+    font-weight: theme-get(weight, light);
+    color: theme-get(text, color, light);
+    margin-bottom: theme-get(space, normal);
+    @include small {
+      font-size: theme-get(text, size, bigger);
+    }
+    @include large {
+      font-size: theme-get(text, size, big);
+      margin-bottom: theme-get(space, normal);
+    }
+  }
+}

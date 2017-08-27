@@ -51,7 +51,7 @@
   fill: transparent;
   stroke:#FFF;
   stroke-miterlimit:1;
-  stroke-dasharray: 400; 
+  stroke-dasharray: 400;
   will-change: opacity, stroke-dashoffset;
   animation-iteration-count: 100;
 }
@@ -86,7 +86,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: z-index(loader);
   background-color: var(--dark);
   will-change: opacity;
 }

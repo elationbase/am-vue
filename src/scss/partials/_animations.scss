@@ -1,0 +1,75 @@
+
+@keyframes dashHero {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-animation {
+	20% {
+	  margin-left: 0;
+  }
+	25% {
+	  margin-left: -100%;
+  }
+	45% {
+	  margin-left: -100%;
+  }
+	50% {
+	  margin-left: -200%;
+  }
+	70% {
+	  margin-left: -200%;
+  }
+	75% {
+	  margin-left: -300%;
+  }
+	98% {
+	  margin-left: -300%;
+  }
+	100% {
+	  margin-left: 0;
+  }
+}
+
+
+@keyframes fill {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dashLogo {
+  95% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes moveLogo {
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes skewLogo {
+  to {
+    transform: scaleY(1) skewX(0);
+  }
+}
