@@ -1,0 +1,72 @@
+
+$left: 30%;
+$space: 50px;
+
+.stem {
+  position: relative;
+  height: 0px;
+  z-index: z-index(off);
+  &__color {
+    position: fixed;
+    width: $space;
+    height: 50vh;
+    top: 0;
+    left: $left;
+    background: $color-salmon;
+    z-index: z-index(stem2);
+    transition: all 0.25s;
+  }
+  &__bg {
+    position: fixed;
+    width: $space;
+    height: 100vh;
+    top: 0;
+    left: $left;
+    background: #CCC;
+    z-index: z-index(stem1);
+  }
+  &__sprite {
+    background: url("/static/img/projects/temp-sprite.png");
+    width: $space;
+    position: absolute;
+    z-index: z-index(stem2);
+    margin-left: -$space;
+    &--space {
+      background-position: 0 0;
+      top: $space;
+      bottom: 0;
+      &-top {
+        top: 0;
+      }
+    }
+    &--end {
+      background-position: -300px 0;
+      bottom: -50vh;
+      height: 50vh;
+    }
+    &--research {
+      height: $space;
+      background-position: -50px 0;
+    }
+
+    &--architecture {
+      height: $space;
+      background-position: -100px 0;
+    }
+
+    &--design {
+      height: $space;
+      background-position: -150px 0;
+    }
+
+    &--code {
+      height: $space;
+      background-position: -200px 0;
+    }
+
+    &--integration {
+      height: $space;
+      background-position: -250px 0;
+    }
+  }
+}

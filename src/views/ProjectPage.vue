@@ -1,7 +1,7 @@
 <template>
   <article class="project">
+    <link v-if="!projectPass.font.local" :href="projectPass.font.url" rel="stylesheet">
     <load-project v-if="loading"></load-project>
-
     <transition name="fade">
     </transition>
       <div v-if="show" class="stem">
@@ -61,8 +61,8 @@
                   </li>
                 </ul>
                 <legend>Typography</legend>
-                <ul class="project__type">
-                  <li>Helvetica Neue</li>
+                <ul class="project__type" :style="{ fontFamily: projectPass.font.family, fontWeight: projectPass.font.weight }">
+                  <li v-text="projectPass.font.face"></li>
                   <li>ABCDEFGHIJKLMNOPQRSTVWXYZ</li>
                   <li>abcdefghijklmnopqrstvwxyz</li>
                   <li>123456789</li>
@@ -201,78 +201,9 @@ export default {
 
 <style lang="scss">
   @import "../scss/utilities/base";
+  @import "../scss/components/stem-scroll";
+  @import "../scss/components/icon-close";
 
-  $left: 30%;
-  $space: 50px;
-
-  .stem {
-    position: relative;
-    height: 0px;
-    z-index: z-index(off);
-    &__color {
-      position: fixed;
-      width: $space;
-      height: 50vh;
-      top: 0;
-      left: $left;
-      background: $color-salmon;
-      z-index: z-index(stem2);
-      transition: all 0.25s;
-    }
-    &__bg {
-      position: fixed;
-      width: $space;
-      height: 100vh;
-      top: 0;
-      left: $left;
-      background: #CCC;
-      z-index: z-index(stem1);
-    }
-    &__sprite {
-      background: url("/static/img/projects/temp-sprite.png");
-      width: $space;
-      position: absolute;
-      z-index: z-index(stem2);
-      margin-left: -$space;
-      &--space {
-        background-position: 0 0;
-        top: $space;
-        bottom: 0;
-        &-top {
-          top: 0;
-        }
-      }
-      &--end {
-        background-position: -300px 0;
-        bottom: -50vh;
-        height: 50vh;
-      }
-      &--research {
-        height: $space;
-        background-position: -50px 0;
-      }
-
-      &--architecture {
-        height: $space;
-        background-position: -100px 0;
-      }
-
-      &--design {
-        height: $space;
-        background-position: -150px 0;
-      }
-
-      &--code {
-        height: $space;
-        background-position: -200px 0;
-      }
-
-      &--integration {
-        height: $space;
-        background-position: -250px 0;
-      }
-    }
-  }
 
   .project {
     &__header {
@@ -378,8 +309,6 @@ export default {
     }
     &__type {
       margin-bottom: theme-get(space, big);
-      font-family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Helvetica, sans-serif;
-      font-weight: 100;
       font-size: theme-get(text, size, huge);
       line-height: 1;
     }
@@ -414,49 +343,11 @@ export default {
         }
       }
     }
-    .icon-close {
-      $size: 50px;
-      height: $size;
-      width: $size;
-      position: fixed;
-      z-index: z-index(close);
-      right: $size/2;
-      top: $size/4;
-      box-sizing: border-box;
-      line-height: $size;
-      display: inline-block;
-      text-indent: -9999px;
-      &:before, &:after {
-        $width: 50px;
-        $height: 2px;
-        transform: rotate(-45deg);
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -$height/2;
-        margin-left: -$width/2;
-        display: block;
-        height: $height;
-        width: $width;
-        background-color: $color-white;
-        box-shadow: 0 0 15px rgba(0,0,0,0.5);
-        transition: all 0.25s ease-out;
-      }
-      &:after {
-        transform: rotate(-135deg);
-      }
-      &:hover {
-        &:before, &:after {
-          transform: rotate(0deg);
-        }
-      }
-    }
   }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .fade-enter, .fade-leave-to {
     opacity: 0
   }
 </style>

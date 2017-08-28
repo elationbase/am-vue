@@ -2,10 +2,11 @@
   <footer class="main-footer">
     <div class="main-footer__wrap">
       <eb-logo></eb-logo>
-      <p><small>Designed and code with <span>&#10084;</span> by <span>Alvaro Montero</span> 2017 for <span>You</span>.</small></p>
+      <p><small>Designed and Coded with <span>&#10084;</span> by <span>Alvaro Montero</span> 2017 for <span>You</span>.</small></p>
       <p><small>The code repo for this page can be found <span>@</span><a href="https://github.com/elationbase/am-vue">github.com</a></small></p>
 
       <p class="dark"><small>Source Technology used: Sketch + SVG + HTML + SCSS + JS + VueJS + GitHub.</small></p>
+      <p class="dark"><small>Stock Photography courtesy of https://picjumbo.com</small></p>
     </div>
   </footer>
 </template>
@@ -67,6 +68,9 @@
       color: $color-blue;
       margin-top: theme-get(space, normal);
       font-size: theme-get(text, size, small);
+      &:last-child {
+        margin-top: theme-get(space, none);
+      }
     }
   }
 }
