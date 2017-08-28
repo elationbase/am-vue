@@ -2,7 +2,7 @@
   <article class="projects">
     <div class="projects__group">
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__projects__row__project--x2': project.important }">
+        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project)">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <h2 v-text="project.name"></h2>

@@ -1,8 +1,5 @@
 const projects = {
   1: {
-    _id: 'fo596aa7a1bc6d7ea8d90f8d65o',
-    index: 0,
-    isActive: true,
     important: false,
     url: 'portfolio.kaplan.edu',
     screens: [
@@ -69,26 +66,58 @@ const projects = {
     },
   },
   2: {
-    _id: '596aa7a1f1b049709b166c49',
-    index: 1,
-    isActive: true,
     important: true,
-    picture: 'http://placehold.it/1300x400',
-    pictureHome: 'http://placehold.it/600x600',
-    name: 'Kaplan Portfolio',
-    company: 'Kaplan University',
-    project: 'Voluptate anim ea ut excepteur laboris ullamco dolore.',
-    body: 'Qui sint nulla culpa est occaecat exercitation veniam est Lorem magna dolore ex fugiat. Anim minim nostrud culpa duis officia velit Lorem qui labore sit. Eu sit et et ipsum eiusmod laborum eu magna aute. Eu proident occaecat non do excepteur fugiat veniam culpa adipisicing ipsum reprehenderit tempor.\r\nDolor nostrud elit aute pariatur velit nulla mollit reprehenderit mollit velit dolor sit nostrud labore. Do ea velit eiusmod ad culpa consequat et nostrud. Amet anim labore sit mollit ad cupidatat magna sunt laboris consectetur cupidatat.\r\nVelit Lorem adipisicing labore ipsum dolore dolore sint laborum officia. Eiusmod veniam elit irure voluptate. Anim culpa consequat sint velit cillum mollit excepteur tempor fugiat. Cillum quis et veniam sit Lorem aliqua irure adipisicing ad irure fugiat nostrud fugiat. Occaecat tempor labore velit fugiat eiusmod eu quis nostrud id deserunt sit ad occaecat sint. Ex adipisicing in aute aute non nisi ullamco culpa irure Lorem amet fugiat sunt labore. Duis mollit laborum deserunt consectetur eiusmod aute voluptate cillum mollit irure irure.\r\n',
-    released: '2014-08-01T09:36:24 +04:00',
-    tags: [
-      'irure',
-      'voluptate',
-      'consequat',
-      'exercitation',
-      'deserunt',
-      'ad',
-      'laborum',
+    url: 'private',
+    screens: [
+      '/static/img/projects/bhi/bhi-lecture-series1.jpg',
+      '/static/img/projects/bhi/bhi-lecture-series2.jpg',
     ],
+    pictureHome: '/static/img/projects/bhi/thumb.jpg',
+    name: 'Brain an Owners Guide',
+    company: 'Center for the Brain Health',
+    project: 'Brain an Owners Guide',
+    roles: [
+      'UX Design',
+      'Front-end Developemnt',
+    ],
+    body: 'The Brain lecture series 2015 Center for the Brain Health annual series sell-out public lecture series, delivers groundbreaking brain health research straight from renowned leaders of the field',
+    released: 'January 2015',
+    colors: [
+      '#202c38',
+      '#384a5e',
+      '#384a5e',
+      '#b0d041',
+      '#f0752f',
+      '#a1539e',
+      '#FFFFFF',
+    ],
+    font: {
+      face: 'Helvetica Neue',
+      local: true,
+      url: '',
+    },
+    stack: {
+      2: {
+        title: 'CreativeCloud',
+        icon: 'icon-adobe',
+      },
+      3: {
+        title: 'CSS',
+        icon: 'icon-css',
+      },
+      4: {
+        title: 'HTML5',
+        icon: 'icon-html',
+      },
+      5: {
+        title: 'jQuery',
+        icon: 'icon-jquery',
+      },
+      6: {
+        title: 'Git',
+        icon: 'icon-git',
+      },
+    },
   },
   3: {
     _id: '596aa7a198e0b44c44cf9398',

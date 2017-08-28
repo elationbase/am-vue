@@ -91,7 +91,9 @@
               <h3 class="eb-type-h3">Screens</h3>
               <ul class="project__screens">
                 <li v-for="screen in projectPass.screens" :key="screen.key">
-                  <img :src="screen" alt="">
+                  <a :href="screen" target="_blank">
+                    <img :src="screen" alt="">
+                  </a>
                 </li>
               </ul>
             </div>
@@ -272,10 +274,6 @@ export default {
     }
   }
 
-  body {
-    background-color: #F1F1F1;
-  }
-
   .project {
     &__header {
       height: 50vh;
@@ -297,6 +295,7 @@ export default {
         font-weight: 200;
         text-align: center;
         line-height: 1;
+        color: $color-salmon;
       }
     }
     &__body {
@@ -440,7 +439,8 @@ export default {
         display: block;
         height: $height;
         width: $width;
-        background-color: #fff;
+        background-color: $color-white;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
         transition: all 0.25s ease-out;
       }
       &:after {
