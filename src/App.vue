@@ -2,7 +2,9 @@
 <template>
   <div id="app">
 
-    <app-loader v-if="firstLoad" :speed="8" message="Loading"></app-loader>
+    <transition name="fade">
+      <app-loader v-if="firstLoad" :speed="8"></app-loader>
+    </transition>
 
     <main v-show="ready" v-if="!selectedProject">
       <app-header></app-header>
@@ -63,14 +65,6 @@
         this.selectedProject = false;
         this.project = {};
       },
-      loadTimer() {
-        this.loading = true;
-        // setTimeout(() => {
-        //   this.loading = false;
-        // }, 2000);
-      },
-    },
-    computed: {
       setPosition(x, y) {
         return x + y;
       },
@@ -78,14 +72,22 @@
         return this.setPosition();
       },
     },
+    computed: {
+    },
     mounted() {
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 500);
+      }, 4000);
     },
   };
 </script>
 <style lang="scss">
   @import './src/scss/main';
+  .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-leave-to {
+    opacity: 0
+  }
 </style>
