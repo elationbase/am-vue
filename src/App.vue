@@ -8,7 +8,7 @@
       <app-header></app-header>
       <home-hero></home-hero>
       <my-intro></my-intro>
-      <projects v-on:projectShow="showProject"></projects>
+      <project-list v-on:projectShow="showProject"></project-list>
       <work-stack></work-stack>
       <comments-section></comments-section>
       <app-footer v-show="ready"></app-footer>
@@ -26,7 +26,7 @@
   import AppFooter from '@/components/AppFooter';
   import HomeHero from '@/components/HomeHero';
   import MyIntro from '@/components/MyIntro';
-  import Projects from '@/components/Projects';
+  import ProjectList from '@/components/ProjectList';
   import WorkStack from '@/components/WorkStack';
   import CommentsSection from '@/components/CommentsSection';
   import ProjectPage from '@/views/ProjectPage';
@@ -39,7 +39,7 @@
       AppFooter,
       HomeHero,
       MyIntro,
-      Projects,
+      ProjectList,
       WorkStack,
       CommentsSection,
       ProjectPage,
