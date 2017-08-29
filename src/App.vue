@@ -10,10 +10,10 @@
       <app-header></app-header>
       <home-hero></home-hero>
       <my-intro></my-intro>
-      <project-list v-on:projectShow="showProject"></project-list>
+      <project-list v-on:projectShow="showProject" v-on:getPositionY="setPositionY"></project-list>
       <work-stack></work-stack>
       <comments-section></comments-section>
-      <app-footer v-show="ready"></app-footer>
+      <app-footer></app-footer>
     </main>
 
     <project-page v-else v-on:projectHide="hideProject" :projectPass="project"></project-page>
@@ -54,6 +54,7 @@
         ready: false,
         selectedProject: false,
         project: {},
+        positionY: 0,
       };
     },
     methods: {
@@ -61,18 +62,14 @@
         this.selectedProject = true;
         this.project = project;
       },
+      setPositionY(y) {
+        this.positionY = y;
+      },
       hideProject() {
         this.selectedProject = false;
         this.project = {};
+        window.scroll(0, this.positionY);
       },
-      setPosition(x, y) {
-        return x + y;
-      },
-      getPosition() {
-        return this.setPosition();
-      },
-    },
-    computed: {
     },
     mounted() {
       setTimeout(() => {
@@ -84,10 +81,4 @@
 </script>
 <style lang="scss">
   @import './src/scss/main';
-  .fade-leave-active {
-    transition: opacity .5s
-  }
-  .fade-leave-to {
-    opacity: 0
-  }
 </style>

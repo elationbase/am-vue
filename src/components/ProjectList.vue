@@ -3,7 +3,7 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project)">
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
               <h2 v-text="project.company"></h2>
@@ -14,7 +14,7 @@
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project)">
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
@@ -27,7 +27,7 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project)">
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
@@ -38,7 +38,7 @@
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project)">
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
@@ -59,6 +59,9 @@
     methods: {
       showProject(project) {
         this.$emit('projectShow', project);
+      },
+      setPositionY() {
+        this.$emit('getPositionY', window.scrollY);
       },
       getSize() {
         return Object.keys(getProjects.projects).length;
@@ -86,7 +89,7 @@
       return {
         projects: getProjects.projects,
         projectSplit: this.getHalfSize(),
-        counter: 0,
+        positionY: 0,
       };
     },
   };

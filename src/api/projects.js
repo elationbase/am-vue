@@ -77,7 +77,7 @@ const projects = {
     pictureHome: '/static/img/projects/bhi/thumb.jpg',
     name: 'Brain an Owners Guide',
     company: 'Center for the Brain Health',
-    project: 'Brain an Owners Guide',
+    project: 'Brain: an Owners Guide',
     roles: [
       'UX Design',
       'Front-end Developemnt',

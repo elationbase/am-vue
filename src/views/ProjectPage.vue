@@ -10,8 +10,8 @@
       </div>
       <header v-if="show" class="project__header" :style="{ backgroundColor: projectPass.colors[0] }">
         <a href="#" v-on:click.prevent="hideProject() + !show" class="icon-close">CLOSE</a>
-        <h1 v-text="projectPass.company"></h1>
-        <h2 v-text="projectPass.project"></h2>
+        <h1 v-text="projectPass.company" :style="{ color: projectPass.colors[1] }"></h1>
+        <h2 v-text="projectPass.project" :style="{ color: projectPass.colors[2] }"></h2>
       </header>
       <div v-if="show" class="project__body test">
         <section class="project__body__info js-elementTop" v-bind:class="{ fixed: isFixed }">
@@ -333,11 +333,18 @@ export default {
     &__screens {
       overflow: hidden;
       li {
-        padding: theme-get(space, small);
-        margin: theme-get(space, big);
-        box-shadow: 0 0 30px rgba(0,0,0,0.2);
         float: left;
-        max-width: 250px;
+        a {
+          display: block;
+          padding: theme-get(space, small);
+          margin: theme-get(space, big);
+          box-shadow: 0 0 30px rgba(0,0,0,0.2);
+          max-width: 250px;
+          transition: box-shadow 0.4s ease-out;
+          &:hover {
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+          }
+        }
         img {
           max-width: 100%;
         }
