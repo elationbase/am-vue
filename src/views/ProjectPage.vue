@@ -207,7 +207,7 @@ export default {
 
   .project {
     &__header {
-      height: 50vh;
+      min-height: 50vh;
       overflow: hidden;
       background-color: $color-white;
       img {
@@ -337,7 +337,7 @@ export default {
         margin: theme-get(space, big);
         box-shadow: 0 0 30px rgba(0,0,0,0.2);
         float: left;
-        max-width: 400px;
+        max-width: 250px;
         img {
           max-width: 100%;
         }

@@ -5,8 +5,8 @@
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project)">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
-            <h2 v-text="project.name"></h2>
             <div class="projects__row__project__slide">
+              <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
             </div>
           </a>
@@ -14,10 +14,10 @@
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a :href="'/project/' + project.company">
+          <a href="#" v-on:click.prevent="showProject(project)">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
-            <h2 v-text="project.name"></h2>
             <div class="projects__row__project__slide">
+            <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
             </div>
           </a>
@@ -27,10 +27,10 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a :href="'/project/' + project.company">
+          <a href="#" v-on:click.prevent="showProject(project)">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
-            <h2 v-text="project.name"></h2>
             <div class="projects__row__project__slide">
+            <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
             </div>
           </a>
@@ -38,10 +38,10 @@
       </div>
       <div class="projects__row">
         <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a :href="'/project/' + project.company">
+          <a href="#" v-on:click.prevent="showProject(project)">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
-            <h2 v-text="project.name"></h2>
             <div class="projects__row__project__slide">
+            <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
             </div>
           </a>
@@ -93,6 +93,7 @@
 </script>
 
 <style lang="scss">
+@import "../scss/utilities/base";
 
 // vars
 .projects {
@@ -124,6 +125,14 @@
         visibility: visible;
         transition-delay: 0s;
       }
+      h2 {
+        margin-top: 40%;
+        opacity: 1;
+      }
+      p {
+        margin-top: 0;
+        opacity: 1;
+      }
     }
 
     &__project {
@@ -132,45 +141,48 @@
       color: #fff;
       min-height: 300px;
       margin: 2rem 1rem;
+      cursor: pointer;
       &--x2 {
         min-height: 600px;
       }
       h2 {
-        font-weight: 300;
-        font-size: 1.33333rem;
-        line-height: 1.25;
-        margin: 0;
-        position: absolute;
-        bottom: 1.5rem;
-        right: 1.5rem;
-        z-index: 0;
+        margin-bottom: 5px;
+        line-height: 1;
+        margin-top: 200px;
+        opacity: 0;
+        transition: all 0.8s ease-out;
+        color: $color-white;
+        font-weight: theme-get(weight, light);
+        will-change: margin-top, opacity;
+      }
+      p {
+        margin-top: 200px;
+        line-height: 1;
+        opacity: 0;
+        transition: all 1.3s ease-out;
+        color: $color-salmon;
+        will-change: margin-top, opacity;
       }
       &__photo {
         background: 50% 50% / cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        @include full('absolute');
         transition: 1s;
         transform-origin: center;
+        will-change: transform, filter;
       }
       &__slide {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        @include full('absolute');
         transition: all 0.275s ease-in-out, visibility 0s 0.275s;
         visibility: hidden;
         will-change: transform;
         transform: translateX(100%);
-          background: rgba(0,0,0,0.4);
-          padding: 0 1.5rem;
+        background: rgba($color-dark, 0.8);
+        padding: 0 1.5rem;
       }
       &:hover {
-        .project__photo {
-          transform: scale(1.25);
+        .projects__row__project__photo {
+          transform: scale(1.3);
+          filter: blur(3px);
         }
       }
     }
