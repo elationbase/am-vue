@@ -2,16 +2,18 @@
 <template>
   <div id="app">
 
-    <app-loader v-if="firstLoad" :speed="8" message="Loading"></app-loader>
+    <transition name="fade">
+      <app-loader v-if="firstLoad" :speed="8"></app-loader>
+    </transition>
 
     <main v-show="ready" v-if="!selectedProject">
       <app-header></app-header>
       <home-hero></home-hero>
       <my-intro></my-intro>
-      <project-list v-on:projectShow="showProject"></project-list>
+      <project-list v-on:projectShow="showProject" v-on:getPositionY="setPositionY"></project-list>
       <work-stack></work-stack>
       <comments-section></comments-section>
-      <app-footer v-show="ready"></app-footer>
+      <app-footer></app-footer>
     </main>
 
     <project-page v-else v-on:projectHide="hideProject" :projectPass="project"></project-page>
@@ -52,6 +54,7 @@
         ready: false,
         selectedProject: false,
         project: {},
+        positionY: 0,
       };
     },
     methods: {
@@ -59,30 +62,20 @@
         this.selectedProject = true;
         this.project = project;
       },
+      setPositionY(y) {
+        this.positionY = y;
+      },
       hideProject() {
         this.selectedProject = false;
         this.project = {};
-      },
-      loadTimer() {
-        this.loading = true;
-        // setTimeout(() => {
-        //   this.loading = false;
-        // }, 2000);
-      },
-    },
-    computed: {
-      setPosition(x, y) {
-        return x + y;
-      },
-      getPosition() {
-        return this.setPosition();
+        window.scroll(0, this.positionY);
       },
     },
     mounted() {
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 500);
+      }, 4000);
     },
   };
 </script>
