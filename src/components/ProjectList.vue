@@ -2,7 +2,7 @@
   <article class="projects">
     <div class="projects__group">
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit / 2" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -13,7 +13,7 @@
         </section>
       </div>
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit / 2 && index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -26,7 +26,7 @@
     </div>
     <div class="projects__group">
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit && index <= (projectSplit) + (projectSplit / 2)" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -37,7 +37,7 @@
         </section>
       </div>
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="(project, index) in projects" :key="project.key" v-if="index > (projectSplit) + (projectSplit / 2)" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -66,8 +66,14 @@
       getSize() {
         return Object.keys(getProjects.projects).length;
       },
+      getQuarterSize() {
+        return this.getSize() / 4;
+      },
       getHalfSize() {
         return this.getSize() / 2;
+      },
+      getFullSize() {
+        return this.getSize();
       },
       splipObj(part) {
         const projectsObj = getProjects.projects;
@@ -88,7 +94,9 @@
     data() {
       return {
         projects: getProjects.projects,
+        projectQuarter: this.getQuarterSize(),
         projectSplit: this.getHalfSize(),
+        projectsLength: this.getFullSize(),
         positionY: 0,
       };
     },

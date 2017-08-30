@@ -2,17 +2,19 @@
   <article class="project">
     <link v-if="!projectPass.font.local" :href="projectPass.font.url" rel="stylesheet">
     <load-project v-if="loading"></load-project>
-    <transition name="fade">
-    </transition>
       <div v-if="show" class="stem">
         <div class="stem__color"></div>
         <div class="stem__bg"></div>
       </div>
-      <header v-if="show" class="project__header" :style="{ backgroundColor: projectPass.colors[0] }">
-        <a href="#" v-on:click.prevent="hideProject() + !show" class="icon-close">CLOSE</a>
-        <h1 v-text="projectPass.company" :style="{ color: projectPass.colors[1] }"></h1>
-        <h2 v-text="projectPass.project" :style="{ color: projectPass.colors[2] }"></h2>
-      </header>
+      <transition name="grow">
+        <header v-if="show" class="project__header" :style="{ backgroundColor: projectPass.colors[0] }">
+          <a href="#" v-on:click.prevent="hideProject() + !show" class="icon-close">CLOSE</a>
+          <h1 v-text="projectPass.company" :style="{ color: projectPass.colors[1] }"></h1>
+          <h2 v-text="projectPass.project" :style="{ color: projectPass.colors[2] }"></h2>
+        </header>
+      </transition>
+
+      <transition name="grow">
       <div v-if="show" class="project__body test">
         <section class="project__body__info js-elementTop" v-bind:class="{ fixed: isFixed }">
           <ul>
@@ -102,6 +104,7 @@
           </div>
         </section>
       </div>
+    </transition>
 
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="icon-sass" viewBox="0 0 300 300">
@@ -351,10 +354,25 @@ export default {
       }
     }
   }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
+
+  .grow-enter-active, .grow-leave-active {
+    h1 {
+      transition: all 0.8s;
+    }
+    h2 {
+      transition: all 0.8s;
+      transition-delay: 0.5s;
+    }
+    transition: all 0.8s
   }
-  .fade-enter, .fade-leave-to {
-    opacity: 0
+  .grow-enter, .grow-leave-to {
+      min-height: 100vh;
+      h1 {
+        margin-top: 0;
+      }
+      h2 {
+        opacity: 0;
+
+      }
   }
 </style>

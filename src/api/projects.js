@@ -182,6 +182,81 @@ const projects = {
     },
   },
   4: {
+    important: true,
+    url: 'chewy.com',
+    screens: [
+      '/static/img/projects/chewy/chewy-product-phone.jpg',
+      '/static/img/projects/chewy/app-landingpage.jpg',
+      '/static/img/projects/chewy/chewy-homepage.jpg',
+      '/static/img/projects/chewy/product-extended-page.jpg',
+      '/static/img/projects/chewy/chewy-orders.jpg',
+      '/static/img/projects/chewy/chewy-autoship.jpg',
+    ],
+    pictureHome: '/static/img/projects/chewy/thumb.jpg',
+    name: 'Chewy Store Front',
+    company: 'Chewy.com',
+    project: 'Store Front',
+    roles: [
+      'UX Design',
+      'Lead Style Guide',
+      'Front-end Developemnt',
+    ],
+    body: 'Chewy, the online pet product startup that rocketed to nearly $1 billion in reported sales in the space of five years, may have just set a record for the richest acquisition in Internet history. Chewy was growing at a breakneck pace, with a headcount of 3,400 at its 70,000-square-foot Dania, Fla. We want to be the No. 1 pet retailer in the world.',
+    released: 'May 2016',
+    colors: [
+      '#128ced',
+      '#f8d71c',
+      '#EEEEEE',
+      '#d0021b',
+      '#333333',
+    ],
+    font: {
+      face: 'Roboto',
+      family: '"Roboto", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Roboto:300',
+    },
+    stack: {
+      1: {
+        title: 'SketchApp',
+        icon: 'icon-sketch',
+      },
+      2: {
+        title: 'CreativeCloud',
+        icon: 'icon-adobe',
+      },
+      3: {
+        title: 'Sass',
+        icon: 'icon-sass',
+      },
+      4: {
+        title: 'HTML5',
+        icon: 'icon-html',
+      },
+      5: {
+        title: 'JavaScript',
+        icon: 'icon-js',
+      },
+      6: {
+        title: 'VueJs',
+        icon: 'icon-vue',
+      },
+      7: {
+        title: 'Webpack',
+        icon: 'icon-webpack',
+      },
+      8: {
+        title: 'Gulp',
+        icon: 'icon-gulp',
+      },
+      9: {
+        title: 'Git',
+        icon: 'icon-git',
+      },
+    },
+  },
+  5: {
     important: false,
     url: 'redskins.kaplan.edu',
     screens: [
@@ -219,7 +294,7 @@ const projects = {
       },
     },
   },
-  5: {
+  6: {
     important: false,
     url: 'aarptek.aarp.org',
     screens: [
@@ -258,7 +333,7 @@ const projects = {
       },
     },
   },
-  6: {
+  7: {
     important: false,
     url: 'indigo.luc.edu',
     screens: [
@@ -298,67 +373,132 @@ const projects = {
       },
     },
   },
-  7: {
-    important: false,
-    url: 'portfolio.kaplan.edu',
+  8: {
+    important: true,
+    url: 'styleguide.chewy.com',
     screens: [
-      '/static/img/projects/kaplan-portfolio/01-phone.jpg',
-      '/static/img/projects/kaplan-portfolio/01-tablet.jpg',
-      '/static/img/projects/kaplan-portfolio/01.jpg',
+      '/static/img/projects/cw-ui/styleguide-design-tablet.jpg',
+      '/static/img/projects/cw-ui/styleguide-javascript.jpg',
+      '/static/img/projects/cw-ui/styleguide-home.jpg',
     ],
-    pictureHome: '/static/img/projects/kaplan-portfolio/thumb.jpg',
-    name: 'Kaplan Portfolio Assessment',
-    company: 'Kaplan University',
-    project: 'Portfolio Assessment',
+    pictureHome: '/static/img/projects/cw-ui/thumb.jpg',
+    name: 'Chewy Style Guide',
+    company: 'Chewy Inc.',
+    project: 'Style Guide / Component Library',
     roles: [
       'Ideation',
       'UX Design',
       'Front-end Developemnt',
     ],
-    body: 'WebApp for Kaplan University, to help potencial students get college credits for whether user you’ve been working for years, served in the military, or spent time volunteering, showcasing your knowledge through our credit-for-work experience courses could save you thousands of dollars and help you finish your Kaplan University undergraduate degree faster.',
-    released: 'November 2013',
+    body: 'Chewy Style Guide is a comprehensive “living document” that keeps track of all the repeating elements for a project, from branding rules down to the amount of beveling for call-to-action buttons. This Style guide also impart rules and suggested practices, including dos and don’ts.',
+    released: 'April 2017',
     colors: [
-      '#232a4d',
-      '#434b68',
-      '#0198ce',
-      '#e0e0e0',
-      '#333333',
+      '#21242e',
+      '#1a5cb1',
+      '#5a5b5e',
+      '#f7d128',
+      '#F1F1F1',
     ],
     font: {
-      face: 'Helvetica Neue',
-      family: '"HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "Helvetica Neue", Helvetica, sans-serif',
-      weight: 100,
-      local: true,
-      url: '',
+      face: 'Roboto',
+      family: '"Roboto", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Roboto:300',
     },
     stack: {
       1: {
         title: 'SketchApp',
         icon: 'icon-sketch',
       },
-      2: {
+      3: {
+        title: 'SCSS',
+        icon: 'icon-sass',
+      },
+      4: {
+        title: 'HTML5',
+        icon: 'icon-html',
+      },
+      5: {
+        title: 'Vue JS',
+        icon: 'icon-vue',
+      },
+      6: {
+        title: 'jQuery',
+        icon: 'icon-jquery',
+      },
+      7: {
+        title: 'Git',
+        icon: 'icon-git',
+      },
+      8: {
+        title: 'Webpack',
+        icon: 'icon-webpack',
+      },
+    },
+  },
+  9: {
+    important: false,
+    url: 'elationbase.com/apps',
+    screens: [
+      '/static/img/projects/pfb/elationbase-pphonebook-home.jpg',
+      '/static/img/projects/pfb/logo-private-phonebook.jpg',
+      '/static/img/projects/pfb/01-splash-s.jpg',
+      '/static/img/projects/pfb/02-password-s.jpg',
+      '/static/img/projects/pfb/03-phonebook-s.jpg',
+      '/static/img/projects/pfb/04-contact-s.jpg',
+      '/static/img/projects/pfb/06-settigs-light-s.jpg',
+      '/static/img/projects/pfb/07-contact-light-s.jpg',
+    ],
+    pictureHome: '/static/img/projects/pfb/thumb.jpg',
+    name: 'EB Private Phonebook',
+    company: 'ElationBase',
+    project: 'Private Phonebook',
+    roles: [
+      'Ideation',
+      'UX Design',
+      'Hybrid App Developemnt',
+    ],
+    body: 'Hybrid App developemnt with Cordova. This app will help you keep your sensible contacts private and secure by having a password protected phone book. Stop unwanted people see contacts that you don’t want them to see.',
+    released: 'September 2014',
+    colors: [
+      '#2e383d',
+      '#33bccb',
+      '#ec6446',
+      '#eeeeee',
+      '#999999',
+    ],
+    font: {
+      face: 'Maven Pro',
+      family: '"Maven Pro", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Maven+Pro',
+    },
+    stack: {
+      1: {
         title: 'CreativeCloud',
         icon: 'icon-adobe',
       },
       3: {
         title: 'CSS',
-        icon: 'icon-css',
+        icon: 'icon-sass',
       },
       4: {
-        title: 'HTML5 Video',
+        title: 'HTML5',
         icon: 'icon-html',
       },
       5: {
+        title: 'JavaScript',
+        icon: 'icon-js',
+      },
+      6: {
         title: 'jQuery',
         icon: 'icon-jquery',
       },
-      6: {
+      7: {
         title: 'Git',
         icon: 'icon-git',
-      },
-      7: {
-        title: 'Angular',
-        icon: 'icon-angular',
       },
       8: {
         title: 'Gulp',
@@ -366,27 +506,166 @@ const projects = {
       },
     },
   },
-  8: {
-    _id: '596aa7a1b58714fbe56ec412',
-    index: 4,
-    isActive: true,
+  10: {
     important: false,
-    picture: 'http://placehold.it/1300x400',
-    pictureHome: 'http://placehold.it/500x500',
-    name: 'id deserunt eu duis ea',
-    company: 'Zenolux2',
-    project: 'Adipisicing laborum proident tempor aliquip irure proident ullamco sit sint.',
-    body: 'Cillum fugiat fugiat quis enim voluptate non reprehenderit exercitation ut magna culpa nostrud dolore sunt. In qui tempor quis tempor exercitation velit cillum incididunt aliquip pariatur anim et. Deserunt aliqua elit nulla id ullamco sit.\r\nReprehenderit occaecat deserunt id dolore magna officia Lorem tempor sunt proident cillum. Occaecat dolore nisi non sunt ad cillum irure culpa. Commodo est reprehenderit anim exercitation laboris esse. In ipsum nulla aliqua sit duis Lorem est. Irure ullamco do duis adipisicing consequat cillum cillum aliquip. Velit esse id fugiat aliquip commodo labore. Sint incididunt amet Lorem id.\r\nId nisi non ipsum commodo do esse occaecat. Dolore incididunt est amet sit. Id aliquip dolor nisi exercitation enim ut in incididunt consectetur incididunt ad ea. Occaecat irure velit culpa mollit ullamco consectetur officia. Elit consectetur adipisicing sint occaecat aliqua. Incididunt ea sint consequat dolor laboris tempor labore.\r\n',
-    released: '2014-11-12T04:38:52 +05:00',
-    tags: [
-      'qui',
-      'est',
-      'magna',
-      'sit',
-      'elit',
-      'cupidatat',
-      'occaecat',
+    url: 'elationbase.com/elation-flat-touch',
+    screens: [
+      '/static/img/projects/eb-theme/eb-elation-flat-touch-landingpage.jpg',
+      '/static/img/projects/eb-theme/eb-elation-flat-touch-homepage.jpg',
+      '/static/img/projects/eb-theme/eb-elation-flat-touch-categorypage.jpg',
+      '/static/img/projects/eb-theme/eb-elation-flat-touch-productpage.jpg',
     ],
+    pictureHome: '/static/img/projects/eb-theme/thumb.jpg',
+    name: 'EB Themes',
+    company: 'ElationBase',
+    project: 'Custom Themes',
+    roles: [
+      'UX Design',
+      'Front-end Developemnt',
+    ],
+    body: 'Developed two custom jQuery plugins: eb Panel Nav Hashtag: A complete navigation system with panel transitions and hashtag enabled. And Password Requirements: The easy way to help users meet your minimum password requirements',
+    released: 'September 2014',
+    colors: [
+      '#425563',
+      '#27a86b',
+      '#80acb2',
+      '#ec6859',
+      '#F1F1F1',
+    ],
+    font: {
+      face: 'Maven Pro',
+      family: '"Maven Pro", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Maven+Pro',
+    },
+    stack: {
+      1: {
+        title: 'CreativeCloud',
+        icon: 'icon-adobe',
+      },
+      3: {
+        title: 'CSS',
+        icon: 'icon-sass',
+      },
+      4: {
+        title: 'HTML5',
+        icon: 'icon-html',
+      },
+      5: {
+        title: 'JavaScript',
+        icon: 'icon-vue',
+      },
+      6: {
+        title: 'jQuery',
+        icon: 'icon-jquery',
+      },
+      7: {
+        title: 'Git',
+        icon: 'icon-git',
+      },
+    },
+  },
+  11: {
+    important: false,
+    url: 'indigo.luc.edu',
+    screens: [
+      '/static/img/projects/luc/02-phone.jpg',
+      '/static/img/projects/luc/02-desktop.jpg',
+      '/static/img/projects/luc/01.jpg',
+      '/static/img/projects/luc/03.jpg',
+    ],
+    pictureHome: '/static/img/projects/luc/thumb.jpg',
+    name: 'Indigo Learning Platform',
+    company: 'Loyola University Chicago',
+    project: 'Loyola University Indigo',
+    roles: [
+      'UX Design',
+      'UI Design',
+    ],
+    body: 'Re-design of Loyola University Chicago online education platform, Indigo Learning Platform',
+    released: 'Novenber 2014',
+    colors: [
+      '#177bb9',
+      '#a4044a',
+      '#ebebeb',
+      '#FFFFFF',
+      '#333333',
+    ],
+    font: {
+      face: 'Maven Pro',
+      family: '"Maven Pro", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Maven+Pro',
+    },
+    stack: {
+      1: {
+        title: 'CreativeCloud',
+        icon: 'icon-adobe',
+      },
+    },
+  },
+  12: {
+    important: true,
+    url: 'elationbase.com/jquery',
+    screens: [
+      '/static/img/projects/eb-jq/eb-jquery-home.jpg',
+      '/static/img/projects/eb-jq/eb-jquery-pass-home.jpg',
+      '/static/img/projects/eb-jq/eb-jquery-nav-home.jpg',
+      '/static/img/projects/eb-jq/eb-jquery-nav-usage.jpg',
+    ],
+    pictureHome: '/static/img/projects/eb-jq/thumb.jpg',
+    name: 'EB jQuery Plugins',
+    company: 'ElationBase',
+    project: 'Custom jQuery Plugins',
+    roles: [
+      'UX Design',
+      'jQuery Plugin Dev',
+      'Front-end Developemnt',
+    ],
+    body: 'Developed two custom jQuery plugins: eb Panel Nav Hashtag: A complete navigation system with panel transitions and hashtag enabled. And Password Requirements: The easy way to help users meet your minimum password requirements',
+    released: 'September 2014',
+    colors: [
+      '#425563',
+      '#27a86b',
+      '#80acb2',
+      '#ec6859',
+      '#F1F1F1',
+    ],
+    font: {
+      face: 'Maven Pro',
+      family: '"Maven Pro", sans-serif',
+      weight: 200,
+      local: false,
+      url: 'https://fonts.googleapis.com/css?family=Maven+Pro',
+    },
+    stack: {
+      1: {
+        title: 'CreativeCloud',
+        icon: 'icon-adobe',
+      },
+      3: {
+        title: 'CSS',
+        icon: 'icon-sass',
+      },
+      4: {
+        title: 'HTML5',
+        icon: 'icon-html',
+      },
+      5: {
+        title: 'JavaScript',
+        icon: 'icon-vue',
+      },
+      6: {
+        title: 'jQuery',
+        icon: 'icon-jquery',
+      },
+      7: {
+        title: 'Git',
+        icon: 'icon-git',
+      },
+    },
   },
 };
 export default {
