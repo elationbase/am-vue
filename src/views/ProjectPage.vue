@@ -164,7 +164,7 @@ export default {
       setTimeout(() => {
         this.eleTop = this.$el.querySelector('.js-elementTop').offsetTop;
         this.stickInfo();
-      }, 200);
+      }, 2000);
     }, 1500);
   },
   methods: {

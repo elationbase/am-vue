@@ -1,5 +1,5 @@
 
-@mixin skew($arg, $y, $x) {
+@mixin skew($arg, $y: 0, $x: 0) {
   @if $arg == 'left' {
     transform: skewY(-2deg) translateY(-3rem);
     > * {
@@ -12,8 +12,8 @@
       transform: skewY(-2deg);
     }
   }
-  @else {
-    transform: skewY($y) translateY($x);
+  @if $arg == 'free' {
+    ransform: skewY($y) translateY($x);
   }
 }
 
