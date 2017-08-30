@@ -145,6 +145,33 @@
           	c0-1.1,0.9-2,2-2l796.7-1c1.1,0,2,0.9,2,2l-92.7,132.3C1911.7,12.1,1910.8,12.8,1909.7,12.8z"/>
           </svg>
         </li>
+        <li class="hero__images__txt">
+          <svg class="hero__images__hello" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1099.9">
+          <path class="st-txt st-txt-1" d="M908.13,152.37,921,145.94V148l-8.79,4.37,8.79,4.42v2Z"/>
+          <path class="st-txt st-txt-2" d="M927.91,159.37a1.72,1.72,0,0,1-1.71-1.71,1.62,1.62,0,0,1,.5-1.2,1.69,1.69,0,0,1,2.39,0,1.69,1.69,0,0,1,0,2.41A1.64,1.64,0,0,1,927.91,159.37Zm-1-5.79-.54-13.14h2.95l-.54,13.14Z"/>
+          <path class="st-txt st-txt-3" d="M936.65,152.29v-1.83h9.19v1.83Z"/>
+          <path class="st-txt st-txt-4" d="M950,152.29v-1.83h9.19v1.83Z"/>
+          <path class="st-txt st-txt-5" d="M975.47,158.81V140.43h2.39v7.91h6.77v-7.91H987v18.38h-2.39v-8.63h-6.77v8.63Z"/>
+          <path class="st-txt st-txt-6" d="M999.65,156.78v2h-9.92V140.43h9.74v1.85h-7.35v6.24h6.62v1.84h-6.62v6.43Z"/>
+          <path class="st-txt st-txt-7" d="M1013.16,156.78v2h-9.91V140.43h2.39v16.35Z"/>
+          <path class="st-txt st-txt-8" d="M1026.5,156.78v2h-9.91V140.43H1019v16.35Z"/>
+          <path class="st-txt st-txt-9" d="M1034.61,159.37a5.31,5.31,0,0,1-4.78-2.64,16.12,16.12,0,0,1,0-14.22,5.65,5.65,0,0,1,9.56,0,16.17,16.17,0,0,1,0,14.22A5.3,5.3,0,0,1,1034.61,159.37Zm0-1.84a3.35,3.35,0,0,0,2.88-2,12,12,0,0,0,1.15-5.95,12,12,0,0,0-1.15-5.95,3.1,3.1,0,0,0-5.77,0,12,12,0,0,0-1.15,5.95,12,12,0,0,0,1.15,5.95A3.35,3.35,0,0,0,1034.61,157.53Z"/>
+          <path class="st-txt st-txt-10" d="M1056.7,152.29v-1.83h9.19v1.83Z"/>
+          <path class="st-txt st-txt-11" d="M1070,152.29v-1.83h9.19v1.83Z"/>
+          <path class="st-txt st-txt-12" d="M1094.39,152.37l-12.86,6.44v-2l8.79-4.38-8.79-4.42v-2Z"/>
+          </svg>
+        </li>
+        <li>
+          <svg class="hero__images__google" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1099.9">
+            <path class="st-fat st-fat-1" d="M958.35,190.35s-8.91-8.82-20.17-.72c-8.21,5.91-7.2,19.31,0,24.2s15,4.78,21.18-1.44c3.43-3.43,2.45-9.94,2.45-9.94H948"/>
+            <circle class="st-fat st-fat-2" cx="978.44" cy="207.86" r="9.32"/>
+            <circle class="st-fat st-fat-3" cx="1004.51" cy="207.86" r="9.32"/>
+            <path class="st-fat st-fat-4" d="M1037.5,214a9.32,9.32,0,1,1,0-12.31"/>
+            <path class="st-fat st-fat-5" d="M1021.08,222.68s4.28,5.7,8.25,5.7c6,0,8.2-3.82,8.2-6.11V197.47"/>
+            <line class="st-fat st-fat-6" x1="1046.85" y1="218.76" x2="1046.85" y2="185.14"/>
+            <path class="st-fat st-fat-7" d="M1055,210.3l15.18-6.42s-4.28-7.95-11.1-4.28-5.6,18.23,4,18.23c7.64,0,8.27-4.38,8.27-4.38"/>
+            </svg>
+        </li>
         <li><img class="hero__images__bg" src="/static/img/hero-bg.jpg" alt=""></li>
       </ul>
   </section>
@@ -172,11 +199,12 @@
 .hero {
   background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(223,228,231,1) 100%);
   min-height: 85vh;
+  margin-top: 45px;
   @include phone {
     min-height: 75vh;
   }
   position: relative;
-  @include skew(left, null, null);
+  @include skew(left);
   &:after {
     content: "";
     @include full('absolute');
@@ -184,10 +212,12 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0) 60%,rgba(0,0,0,0.5) 100%);
   }
   &__images {
-    @include skew(null, 2deg, 3rem);
+    @include skew(free, 2deg, 3rem);
+    &__txt {
+      z-index: z-index(hero1);
+    }
     li {
       @include full('absolute');
-      z-index: z-index(hero1);
       max-width: 2000px;
       margin: auto;
       &:last-child {
@@ -236,10 +266,86 @@
     &__keyboard .st0 {
       animation-delay: 5s;
     }
+    &__keyboard .st0 {
+      animation-delay: 3s;
+    }
     &__bg {
       opacity: 0;
       animation: opacity 2s linear forwards;
       animation-delay: 6s;
+    }
+
+    .st-fat {
+      fill: transparent;
+      stroke: $color-dark;
+      stroke-width:2px;
+      stroke-miterlimit:1;
+      will-change: stroke-dashoffset;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: dashg 0.5s linear forwards;
+      &-1 {
+        animation-delay: 2s;
+      }
+      &-2 {
+        animation-delay: 2.5s;
+      }
+      &-3 {
+        animation-delay: 3s;
+      }
+      &-4 {
+        animation-delay: 3.5s;
+      }
+      &-5 {
+        animation-delay: 4s;
+      }
+      &-6 {
+        animation-delay: 4.5s;
+      }
+      &-7 {
+        animation-delay: 5s;
+      }
+    }
+    .st-txt {
+      fill-opacity: 0;
+      animation: show 0.1s linear forwards;
+      fill: $color-gray;
+      &-1 {
+        animation-delay: 1s;
+      }
+      &-2 {
+        animation-delay: 1.1s;
+      }
+      &-3 {
+        animation-delay: 1.2s;
+      }
+      &-4 {
+        animation-delay: 1.3s;
+      }
+      &-5 {
+        animation-delay: 1.4s;
+      }
+      &-6 {
+        animation-delay: 1.5s;
+      }
+      &-7 {
+        animation-delay: 1.6s;
+      }
+      &-8 {
+        animation-delay: 1.7s;
+      }
+      &-9 {
+        animation-delay: 1.8s;
+      }
+      &-10 {
+        animation-delay: 1.9s;
+      }
+      &-11 {
+        animation-delay: 2s;
+      }
+      &-12 {
+        animation-delay: 2.1s;
+      }
     }
   }
   header {

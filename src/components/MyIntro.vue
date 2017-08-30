@@ -4,7 +4,7 @@
         <header>
           <h2 v-text="headline" class="eb-type-h2"></h2>
         </header>
-        <p v-text="desciption"></p>
+        <p v-for="text in desciption" :key="text.key" v-text="text"></p>
     </section>
     <section class="intro__section">
       <ul class="intro__list">
@@ -46,7 +46,12 @@
     data() {
       return {
         headline: 'A Montero Portfolio App',
-        desciption: 'Award winning front-end developer with more than 8+ years experience building pixel perfect websites. Recently nominated for a Webby and AGDA design award with portfolio featured on Awwwards as "Site of the Day". Flexible in working environments having positioned for startups, digital agencies, and fortune 500 companies. Focused on helping agile teams with UI development for large scale CMS websites or client-side web apps.',
+        desciption: [
+          'I have extensive experience building websites and applications for startups, digital agencies, and fortune 500 companies. My responsibilities included the design, front-end development and management always utilizing the latest technologies and up-to-date standards.',
+          'I am passionately build powerful, eficient and reusable web components and I am committed to delivering performant, usable and beautiful user interfaces. I not only love to build world class user experiences, but also I play an active role in defining them.',
+          'With agile development methodology, I utilize time management and prioritize objectives to ensure quality outcomes with a fast turnaround. I always pay detailed attention to design and development, with emphasis on quality assurance in cross browser, cross platform and portable devices.',
+          'My varied experience in both the creative and technical aspects of web development allows me to build strong relationships across departments both within the company and with outside organizations.',
+        ],
         skills: {
           first: {
             title: 'Design',
