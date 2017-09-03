@@ -53,15 +53,6 @@
           </svg>
         </li>
         <li>
-          <svg class="hero__images__laptop" x="0px" y="0px" viewBox="604 -243.9 2000 1099.9">
-          <path class="st0" d="M1065.3,268.1L835.4,498.2c-4,4-10.7,4.1-14.7,0L666.9,344.5c-4-4-4.1-10.7,0-14.7L896.8,99.7
-          	c4-4,10.7-4.1,14.7,0l153.8,153.7C1069.4,257.4,1069.4,264,1065.3,268.1z"/>
-          <path class="st0" d="M870.3,278.3c0,0-11.2-2.3-13.2,10.2c0,0-11.5,3.5-10.5,11.8c1,8.3,9,13.3,9,13.3s6.2,5,13.3,4.8
-          	c7.2-0.2,7.5-6.8,7.5-6.8s0.3-2.8,3.2-3.3c2.8-0.5,8.5-3,6.8-9.3s-3.3-9.2-3.3-9.2s-5.5,3-10.5-2S870.3,278.3,870.3,278.3z"/>
-          <path class="st0" d="M853.3,273.6c0,0-6.5,6.5,1.5,13.7C854.8,287.3,861.3,281.3,853.3,273.6z"/>
-          </svg>
-        </li>
-        <li>
           <svg class="hero__images__cups" x="0px" y="0px" viewBox="604 -243.9 2000 1099.9">
           <path class="st0" d="M2531.5,87.9c0,22.2-19.6,40.3-40,40.3s-41-18-41-40.3s19.6-40.3,40-40.3S2531.5,65.7,2531.5,87.9z"/>
           <path class="st0" d="M2460.6,61.8c0,0-20.3,19.5-16.1,36s7,22.1,23.5,30.3c12.2,6.1,31.1-0.8,31.1-0.8"/>
@@ -115,12 +106,13 @@
           </svg>
         </li>
         <li>
-          <svg class="hero__images__laptop" x="0px" y="0px" viewBox="604 -243.9 2000 1099.9">
-          <path class="st0" d="M1065.3,268.1L835.4,498.2c-4,4-10.7,4.1-14.7,0L666.9,344.5c-4-4-4.1-10.7,0-14.7L896.8,99.7
-          	c4-4,10.7-4.1,14.7,0l153.8,153.7C1069.4,257.4,1069.4,264,1065.3,268.1z"/>
-          <path class="st0" d="M870.3,278.3c0,0-11.2-2.3-13.2,10.2c0,0-11.5,3.5-10.5,11.8c1,8.3,9,13.3,9,13.3s6.2,5,13.3,4.8
-          	c7.2-0.2,7.5-6.8,7.5-6.8s0.3-2.8,3.2-3.3c2.8-0.5,8.5-3,6.8-9.3s-3.3-9.2-3.3-9.2s-5.5,3-10.5-2S870.3,278.3,870.3,278.3z"/>
-          <path class="st0" d="M853.3,273.6c0,0-6.5,6.5,1.5,13.7C854.8,287.3,861.3,281.3,853.3,273.6z"/>
+          <svg class="hero__images__laptop" x="0px" y="0px" viewBox="0 0 2000 1099.9">
+            <path class="st0" d="M462,511.81l-229.9,230.1a10.41,10.41,0,0,1-14.7,0L63.61,588.21a10.41,10.41,0,0,1,0-14.7l229.9-230.1a10.41,10.41,0,0,1,14.7,0L462,497.11A10.32,10.32,0,0,1,462,511.81Z"/>
+            <circle class="st0" cx="121.92" cy="580.08" r="18.75"/>
+            <circle class="st0" cx="121.92" cy="580.08" r="7"/>
+            <line class="st0" x1="103.17" y1="582.83" x2="118.82" y2="586.35"/>
+            <line class="st0" x1="116.17" y1="576.09" x2="128.92" y2="562.69"/>
+            <line class="st0" x1="128.92" y1="580.08" x2="133.04" y2="595.18"/>
           </svg>
         </li>
         <li>
@@ -284,68 +276,34 @@
       stroke-dasharray: 200;
       stroke-dashoffset: 200;
       animation: dashg 0.5s linear forwards;
-      &-1 {
-        animation-delay: 2s;
-      }
-      &-2 {
-        animation-delay: 2.5s;
-      }
-      &-3 {
-        animation-delay: 3s;
-      }
-      &-4 {
-        animation-delay: 3.5s;
-      }
-      &-5 {
-        animation-delay: 4s;
-      }
-      &-6 {
-        animation-delay: 4.5s;
-      }
-      &-7 {
-        animation-delay: 5s;
-      }
     }
+    $i: 1;
+    $add: 0.5;
+    $added: 1.5;
+    $unit: s;
+    @while $i <= 7 {
+      .st-fat-#{$i} {
+        animation-delay: $added + $add#{$unit};
+      }
+      $i: $i + 1;
+      $added: $added + $add;
+    }
+
     .st-txt {
       fill-opacity: 0;
       animation: show 0.1s linear forwards;
       fill: $color-gray;
-      &-1 {
-        animation-delay: 1s;
+    }
+    $i2: 1;
+    $add2: 0.1;
+    $added2: 1.0;
+    $unit2: s;
+    @while $i2 <= 12 {
+      .st-txt-#{$i2} {
+        animation-delay: $added2 + $add2#{$unit};
       }
-      &-2 {
-        animation-delay: 1.1s;
-      }
-      &-3 {
-        animation-delay: 1.2s;
-      }
-      &-4 {
-        animation-delay: 1.3s;
-      }
-      &-5 {
-        animation-delay: 1.4s;
-      }
-      &-6 {
-        animation-delay: 1.5s;
-      }
-      &-7 {
-        animation-delay: 1.6s;
-      }
-      &-8 {
-        animation-delay: 1.7s;
-      }
-      &-9 {
-        animation-delay: 1.8s;
-      }
-      &-10 {
-        animation-delay: 1.9s;
-      }
-      &-11 {
-        animation-delay: 2s;
-      }
-      &-12 {
-        animation-delay: 2.1s;
-      }
+      $i2: $i2 + 1;
+      $added2: $added2 + $add2;
     }
   }
   header {
