@@ -2,9 +2,9 @@
 <template>
   <section class="hero">
       <header>
-        <h1 v-text="name" class="eb-type-h1"></h1>
-        <h2 v-text="position" class="eb-type-h2-alt"></h2>
-        <p v-text="tag"></p>
+        <h1 v-text="heroData.name" class="eb-type-h1"></h1>
+        <h2 v-text="heroData.position" class="eb-type-h2-alt"></h2>
+        <p v-text="heroData.tag"></p>
       </header>
       <ul class="hero__images">
         <li>
@@ -171,17 +171,7 @@
 
 <script>
   export default {
-    props: {
-    },
-    computed: {
-    },
-    data() {
-      return {
-        name: 'Alvaro Montero',
-        position: 'UX Designer + UI Engineer',
-        tag: 'a Creative Technologist',
-      };
-    },
+    props: ['heroData'],
   };
 </script>
 

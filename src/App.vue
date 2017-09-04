@@ -7,12 +7,12 @@
     </transition>
 
     <main v-show="ready" v-if="!selectedProject">
-      <app-header></app-header>
-      <home-hero></home-hero>
-      <my-intro></my-intro>
-      <project-list v-on:projectShow="showProject" v-on:getPositionY="setPositionY"></project-list>
-      <work-stack></work-stack>
-      <comments-section></comments-section>
+      <app-header :headerData="this.fbIcons"></app-header>
+      <home-hero :heroData="this.fbHero"></home-hero>
+      <my-intro :introData="this.fbIntro"></my-intro>
+      <project-list :projectsData="this.fbProjects" v-on:projectShow="showProject" v-on:getPositionY="setPositionY"></project-list>
+      <work-stack :stackData="this.fbStack"></work-stack>
+      <comments-section :commentsData="this.fbComments"></comments-section>
       <app-footer></app-footer>
     </main>
 
@@ -22,7 +22,8 @@
 </template>
 
 <script>
-  import api from '@/api/projects';
+  import Firebase from 'firebase';
+  import config from '@/api/firebase-conf';
   import AppHeader from '@/components/AppHeader';
   import AppLoader from '@/components/AppLoader';
   import AppFooter from '@/components/AppFooter';
@@ -32,6 +33,9 @@
   import WorkStack from '@/components/WorkStack';
   import CommentsSection from '@/components/CommentsSection';
   import ProjectPage from '@/views/ProjectPage';
+
+  const firebaseApp = Firebase.initializeApp(config);
+  const db = firebaseApp.database();
 
   export default {
     name: 'app',
@@ -46,9 +50,33 @@
       CommentsSection,
       ProjectPage,
     },
+    firebase: {
+      fbHero: {
+        source: db.ref('/hero'),
+        asObject: true,
+      },
+      fbIntro: {
+        source: db.ref('/intro'),
+        asObject: true,
+      },
+      fbIcons: {
+        source: db.ref('/icons'),
+        asObject: true,
+      },
+      fbProjects: {
+        source: db.ref('/projects'),
+        asObject: true,
+      },
+      fbStack: {
+        source: db.ref('/stack'),
+        asObject: true,
+      },
+      fbComments: {
+        source: db.ref('/comments'),
+      },
+    },
     data() {
       return {
-        projects: api.projects,
         loading: false,
         firstLoad: true,
         ready: false,

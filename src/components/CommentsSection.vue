@@ -2,24 +2,9 @@
   <div class="comments">
     <h2 class="eb-type-h2">What People Say About Me</h2>
     <ul>
-      <li>
+      <li v-for="comment in commentsData" :key="comment.key">
         <div class="comments__container">
-          <p>Alvaro leverages his extensive domain knowledge to build confidence with stakeholders and effectively influence their design decisions. I have no reservations with Alvaro leading stakeholder meetings or design discussions.</p>
-        </div>
-      </li>
-      <li>
-        <div class="comments__container">
-          <p>When presented with a problem, Alvaro is tenacious, not resting until a suitable solution is found.</p>
-        </div>
-      </li>
-      <li>
-        <div class="comments__container">
-          <p>Alvaro's clear understanding of his craft and ability to deliver have fostered a solid relationship with both our stakeholders and his team.</p>
-        </div>
-      </li>
-      <li>
-        <div class="comments__container">
-          <p>Alvaro is never satisfied with the status quo. He is constantly looking to introduce new and innovative user experiences. His drive continuously pushes the rest of the team to excel.</p>
+          <p v-text="comment.comment"></p>
         </div>
       </li>
     </ul>
@@ -28,6 +13,7 @@
 
 <script>
   export default {
+    props: ['commentsData'],
   };
 </script>
 

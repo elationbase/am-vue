@@ -14,28 +14,6 @@ export default {
     EbLogo,
     EbMedia,
   },
-  data() {
-    return {
-      icons: {
-        one: {
-          url: 'https://github.com/elationbase',
-          icon: 'icon-github',
-        },
-        two: {
-          url: 'https://www.npmjs.com/~elationbase',
-          icon: 'icon-npm',
-        },
-        three: {
-          url: 'https://codepen.io/elationbase/',
-          icon: 'icon-codepen',
-        },
-        four: {
-          url: 'https://www.linkedin.com/in/monterodesign/',
-          icon: 'icon-linkedin',
-        },
-      },
-    };
-  },
 };
 </script>
 
