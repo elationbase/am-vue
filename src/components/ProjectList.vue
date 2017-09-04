@@ -2,7 +2,7 @@
   <article class="projects">
     <div class="projects__group">
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index <= projectSplit / 2" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="project in projectsData" :key="project.key" v-if="project.index <= projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -13,7 +13,7 @@
         </section>
       </div>
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit / 2 && index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectQuarter && project.index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -26,7 +26,7 @@
     </div>
     <div class="projects__group">
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index > projectSplit && index <= (projectSplit) + (projectSplit / 2)" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectSplit && project.index <= projectSplit + projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -37,7 +37,7 @@
         </section>
       </div>
       <div class="projects__row">
-        <section v-for="(project, index) in projects" :key="project.key" v-if="index > (projectSplit) + (projectSplit / 2)" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
+        <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectSplit + projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
           <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
             <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
             <div class="projects__row__project__slide">
@@ -53,9 +53,10 @@
 </template>
 
 <script>
-  import getProjects from '@/api/projects';
-
   export default {
+    props: [
+      'projectsData',
+    ],
     methods: {
       showProject(project) {
         this.$emit('projectShow', project);
@@ -64,7 +65,7 @@
         this.$emit('getPositionY', window.scrollY);
       },
       getSize() {
-        return Object.keys(getProjects.projects).length;
+        return 12;
       },
       getQuarterSize() {
         return this.getSize() / 4;
@@ -75,25 +76,9 @@
       getFullSize() {
         return this.getSize();
       },
-      splipObj(part) {
-        const projectsObj = getProjects.projects;
-        const fullLength = projectsObj.length;
-        const halfLength = Math.ceil(fullLength / 2);
-        const leftSide = projectsObj.splice(0, halfLength);
-        const rightSide = projectsObj.splice(halfLength, fullLength);
-        let newOnj;
-        if (part === 'first') {
-          newOnj = leftSide;
-        }
-        if (part === 'last') {
-          newOnj = rightSide;
-        }
-        return newOnj;
-      },
     },
     data() {
       return {
-        projects: getProjects.projects,
         projectQuarter: this.getQuarterSize(),
         projectSplit: this.getHalfSize(),
         projectsLength: this.getFullSize(),

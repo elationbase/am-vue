@@ -63,7 +63,7 @@ body {
     color: theme-get(text, color, light);
     margin-bottom: theme-get(space, normal);
     @include small {
-      font-size: theme-get(text, size, big);
+      font-size: theme-get(text, size, bigger);
     }
     @include large {
       font-size: theme-get(text, size, bigger);

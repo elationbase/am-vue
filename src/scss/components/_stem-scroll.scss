@@ -69,4 +69,7 @@ $space: 50px;
       background-position: -250px 0;
     }
   }
+  @include phone {
+    display: none;
+  }
 }

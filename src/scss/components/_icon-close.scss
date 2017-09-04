@@ -1,5 +1,6 @@
+$size: 50px;
+
 .icon-close {
-  $size: 50px;
   height: $size;
   width: $size;
   position: fixed;
@@ -33,6 +34,19 @@
   &:hover {
     &:before, &:after {
       transform: rotate(0deg);
+    }
+  }
+  @include phone {
+    $size: 30px;
+    height: $size;
+    width: $size;
+    &:before, &:after {
+      $width: 30px;
+      $height: 2px;
+      margin-top: -$height/2;
+      margin-left: -$width/2;
+      height: $height;
+      width: $width;
     }
   }
 }

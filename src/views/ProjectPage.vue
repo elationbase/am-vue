@@ -161,24 +161,17 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
+      this.getWindowWidth();
+      window.addEventListener('resize', this.getWindowWidth);
       setTimeout(() => {
         this.eleTop = this.$el.querySelector('.js-elementTop').offsetTop;
         this.stickInfo();
-      }, 2000);
+      }, 1000);
     }, 1500);
   },
   methods: {
     hideProject() {
       this.$emit('projectHide');
-    },
-    stickInfo() {
-      window.addEventListener('scroll', () => {
-        if (!this.isFixed && this.eleTop - window.scrollY < 0) {
-          this.isFixed = true;
-        } else if (this.isFixed && window.scrollY < this.eleTop) {
-          this.isFixed = false;
-        }
-      });
     },
     toTop() {
       if (window.scrollY !== 0) {
@@ -188,6 +181,28 @@ export default {
         }, 10);
       }
     },
+    getWindowWidth() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth < 768) {
+        this.isPhone = true;
+        this.isFixed = false;
+      } else {
+        this.isPhone = false;
+      }
+    },
+    stickInfo() {
+      window.addEventListener('scroll', () => {
+        if (!this.isPhone) {
+          if (!this.isFixed && this.eleTop - window.scrollY < 0) {
+            this.isFixed = true;
+          } else if (this.isFixed && window.scrollY < this.eleTop) {
+            this.isFixed = false;
+          }
+        } else {
+          this.isFixed = false;
+        }
+      });
+    },
   },
   data() {
     return {
@@ -195,6 +210,8 @@ export default {
       projectSelected: false,
       show: false,
       isFixed: false,
+      windowWidth: 0,
+      isPhone: false,
       eleTop: 0,
       mywidth: 0,
     };
@@ -207,27 +224,32 @@ export default {
   @import "../scss/components/stem-scroll";
   @import "../scss/components/icon-close";
 
+  $left: 30%;
+  $space: 50px;
 
   .project {
     &__header {
       min-height: 50vh;
       overflow: hidden;
       background-color: $color-white;
+      padding: theme-get(space, small);
       img {
         min-width: 100%;
         display: block;
       }
       h1 {
-        font-size: 70px;
-        font-weight: 200;
+        font-size: theme-get(text, size, massive);
+        font-weight: theme-get(weight, light);
         text-align: center;
         margin-top: 25vh;
         line-height: 1;
+
       }
       h2 {
-        font-size: 50px;
-        font-weight: 200;
+        font-size: theme-get(text, size, huge);
+        font-weight: theme-get(weight, light);
         text-align: center;
+        margin-bottom: 15vh;
         line-height: 1;
         color: $color-salmon;
       }
@@ -255,10 +277,22 @@ export default {
           font-weight: theme-get(weight, light);
           line-height: 1;
         }
+        @include phone {
+          position: static;
+          width: 100%;
+          margin-right: 0;
+          li {
+            text-align: left;
+          }
+        }
       }
       &__description {
         margin-left: $left;
         padding-left: $space;
+        @include phone {
+          margin-left: 0;
+          padding-left: 0;
+        }
         &__block {
           position: relative;
           padding-bottom: theme-get(space, big);
@@ -295,14 +329,24 @@ export default {
     &__palette {
       margin-bottom: theme-get(space, big);
       li {
-        width: 120px;
-        height: 120px;
         border: 10px solid $color-white;
         border-bottom-width: 40px;
         border-radius: 10px;
         display: inline-block;
         margin-right: theme-get(space, small);
         position: relative;
+        @include small {
+          width: 80px;
+          height: 80px;
+          border-top-width: 7px;
+          border-right-width: 7px;
+          border-bottom-width: 40px;
+          border-left-width: 7px;
+        }
+        @include large {
+          width: 120px;
+          height: 120px;
+        }
         span {
           position: absolute;
           bottom: -35px;
@@ -314,6 +358,9 @@ export default {
       margin-bottom: theme-get(space, big);
       font-size: theme-get(text, size, huge);
       line-height: 1;
+      li {
+        @extend %text-overflow;
+      }
     }
     &__stack {
       margin: auto;
@@ -323,6 +370,9 @@ export default {
         padding: theme-get(space, small);
         font-size: theme-get(text, size, root);
         text-align: center;
+        @include phone {
+          width: 110px;
+        }
       }
       svg {
         width: theme-get(icon-size, small);
@@ -340,12 +390,23 @@ export default {
         a {
           display: block;
           padding: theme-get(space, small);
-          margin: theme-get(space, big);
           box-shadow: 0 0 30px rgba(0,0,0,0.2);
-          max-width: 250px;
           transition: box-shadow 0.4s ease-out;
           &:hover {
             box-shadow: 0 0 30px rgba(0,0,0,0.7);
+          }
+          @include phone {
+            max-width: 130px;
+          }
+          @include tablet {
+            max-width: 150px;
+          }
+          @include small {
+            margin: theme-get(space, normal);
+          }
+          @include large {
+            margin: theme-get(space, big);
+            max-width: 250px;
           }
         }
         img {
