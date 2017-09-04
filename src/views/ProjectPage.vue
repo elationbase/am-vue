@@ -295,14 +295,24 @@ export default {
     &__palette {
       margin-bottom: theme-get(space, big);
       li {
-        width: 120px;
-        height: 120px;
         border: 10px solid $color-white;
         border-bottom-width: 40px;
         border-radius: 10px;
         display: inline-block;
         margin-right: theme-get(space, small);
         position: relative;
+        @include small {
+          width: 80px;
+          height: 80px;
+          border-top-width: 7px;
+          border-right-width: 7px;
+          border-bottom-width: 40px;
+          border-left-width: 7px;
+        }
+        @include large {
+          width: 120px;
+          height: 120px;
+        }
         span {
           position: absolute;
           bottom: -35px;
@@ -314,6 +324,9 @@ export default {
       margin-bottom: theme-get(space, big);
       font-size: theme-get(text, size, huge);
       line-height: 1;
+      li {
+        @extend %text-overflow;
+      }
     }
     &__stack {
       margin: auto;
@@ -340,12 +353,18 @@ export default {
         a {
           display: block;
           padding: theme-get(space, small);
-          margin: theme-get(space, big);
           box-shadow: 0 0 30px rgba(0,0,0,0.2);
-          max-width: 250px;
           transition: box-shadow 0.4s ease-out;
           &:hover {
             box-shadow: 0 0 30px rgba(0,0,0,0.7);
+          }
+          @include small {
+            margin: theme-get(space, normal);
+            max-width: 150px;
+          }
+          @include large {
+            margin: theme-get(space, big);
+            max-width: 250px;
           }
         }
         img {
