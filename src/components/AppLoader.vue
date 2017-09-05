@@ -1,6 +1,5 @@
 <template>
   <div class="loader">
-      <eb-logo></eb-logo>
       <div class="cw-loader">
       </div>
   </div>
@@ -45,35 +44,16 @@
 
 $size: 120px;
 
-@keyframes round {
-  0% {
-    bottom: 100%;
-  }
-  20% {
-    bottom: 100%;
-  }
-  100% {
-    bottom: 0;
-  }
-}
 .loader {
   @include full();
   z-index: z-index(loader);
-  background-color: theme-get(background, primary);
-  will-change: bottom;
-  .logo {
-    width: $size;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-  }
+  background-color: $color-white;
   .cw-loader {
     @include full('absolute');
     bottom: 0;
-    background-color: theme-get(background, alternate);
-    animation: round 2s linear;
+    background: radial-gradient(ellipse at center, #eeeeee 0%, #dfe4e7 100%);
+    will-change: bottom;
+    animation: upDown 2s linear;
   }
 }
 </style>

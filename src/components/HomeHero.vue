@@ -180,8 +180,8 @@
 
 .hero {
   background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(223,228,231,1) 100%);
-  min-height: 85vh;
   margin-top: 45px;
+  overflow: hidden;
   @include phone {
     min-height: 75vh;
   }
@@ -194,7 +194,6 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0) 60%,rgba(0,0,0,0.5) 100%);
   }
   &__images {
-    @include skew(free, 2deg, 3rem);
     &__txt {
       z-index: z-index(hero1);
     }
@@ -215,7 +214,7 @@
     @include phone {
       img, svg {
         max-width: none;
-        width: 200%;
+        width: 150%;
       }
     }
     .st0 {
@@ -301,8 +300,12 @@
     z-index: z-index(hero3);
     left: 50%;
     transform: translate(-50%, 0);
-    @include small {
+    @include phone {
       bottom: 50px;
+      width: 80%;
+    }
+    @include tablet {
+      top: 45%;
       width: 80%;
     }
     @include large {

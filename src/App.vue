@@ -103,7 +103,7 @@
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 4000);
+      }, 2000);
     },
   };
 </script>

@@ -34,6 +34,18 @@
   }
 }
 
+@keyframes upDown {
+  0% {
+    bottom: 100%;
+  }
+  20% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
 @keyframes slide-animation {
 	20% {
 	  margin-left: 0;
