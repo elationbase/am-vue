@@ -11,6 +11,8 @@
           <a href="#" v-on:click.prevent="hideProject() + !show" class="icon-close">CLOSE</a>
           <h1 v-text="projectPass.company" :style="{ color: projectPass.colors[1] }"></h1>
           <h2 v-text="projectPass.project" :style="{ color: projectPass.colors[2] }"></h2>
+          <a v-if="projectPass.link.active" :href="'//' + projectPass.link.url" target="_blank" class="project__header__link" v-text="projectPass.link.url"></a>
+          <span v-else class="project__header__link" v-text="projectPass.link.url"></span>
         </header>
       </transition>
 
@@ -39,7 +41,6 @@
           <section class="project__body__description">
             <div class="project__body__description__block">
               <div class="project__body__description__block__content">
-                <h2 v-text="projectPass.url"></h2>
               </div>
               <i class="stem__sprite stem__sprite--space stem__sprite--space-top"></i>
             </div>
@@ -259,6 +260,19 @@ export default {
         margin-bottom: 15vh;
         line-height: 1;
         color: $color-salmon;
+      }
+      &__link {
+        background: rgba(0,0,0,0.2);
+        color: $color-lt-gray;
+        margin: - theme-get(space, small);;
+        padding: theme-get(space, small);;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease-out;
+        &:hover:not(span) {
+          background-color: rgba(0,0,0,0.4);
+        }
       }
     }
     &__body {

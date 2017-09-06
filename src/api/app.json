@@ -132,7 +132,10 @@
     "01one": {
       "index": 1,
       "important": false,
-      "url": "portfolio.kaplan.edu",
+      "link": {
+        "active": true,
+        "url": "portfolio.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/kaplan-portfolio/01-phone.jpg",
         "/static/img/projects/kaplan-portfolio/01-tablet.jpg",
@@ -201,7 +204,10 @@
     "02two": {
       "index": 2,
       "important": true,
-      "url": "private",
+      "link": {
+        "active": false,
+        "url": "bhi.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/bhi/bhi-lecture-series1.jpg",
         "/static/img/projects/bhi/bhi-lecture-series2.jpg"
@@ -258,7 +264,10 @@
     "03three": {
       "index": 3,
       "important": false,
-      "url": "visionaryvoices.kaplan.edu",
+      "link": {
+        "active": false,
+        "url": "visionaryvoices.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/vv/home.jpg",
         "/static/img/projects/vv/categories.jpg",
@@ -317,7 +326,10 @@
     "04four": {
       "index": 4,
       "important": true,
-      "url": "chewy.com",
+      "link": {
+        "active": true,
+        "url": "www.chewy.com"
+      },
       "screens": [
         "/static/img/projects/chewy/chewy-product-phone.jpg",
         "/static/img/projects/chewy/product-extended-page.jpg",
@@ -393,7 +405,10 @@
     "05five": {
       "index": 5,
       "important": false,
-      "url": "redskins.kaplan.edu",
+      "link": {
+        "active": false,
+        "url": "redskins.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/redskins/home1.jpg",
         "/static/img/projects/redskins/home2.jpg"
@@ -432,7 +447,10 @@
     "06six": {
       "index": 6,
       "important": false,
-      "url": "aarptek.aarp.org",
+      "link": {
+        "active": false,
+        "url": "aarptek.aarp.org"
+      },
       "screens": [
         "/static/img/projects/aarp/Home-02-phone.jpg",
         "/static/img/projects/aarp/Home-02-tablet.jpg",
@@ -472,7 +490,10 @@
     "07seven": {
       "index": 7,
       "important": false,
-      "url": "elationbase.com/apps",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/apps"
+      },
       "screens": [
         "/static/img/projects/pfb/elationbase-pphonebook-home.jpg",
         "/static/img/projects/pfb/logo-private-phonebook.jpg",
@@ -542,7 +563,10 @@
     "08eight": {
       "index": 8,
       "important": true,
-      "url": "styleguide.chewy.com",
+      "link": {
+        "active": false,
+        "url": "styleguide.chewy.com"
+      },
       "screens": [
         "/static/img/projects/cw-ui/styleguide-design-tablet.jpg",
         "/static/img/projects/cw-ui/styleguide-javascript.jpg",
@@ -607,7 +631,10 @@
     "09nine": {
       "index": 9,
       "important": false,
-      "url": "openlearning.kaplan.edu",
+      "link": {
+        "active": true,
+        "url": "opencollege.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/openlearning/openlearning-homepage.jpg",
         "/static/img/projects/openlearning/openlearning-courses.jpg",
@@ -668,7 +695,10 @@
     "10ten": {
       "index": 10,
       "important": false,
-      "url": "elationbase.com/elation-flat-touch",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/elation-flat-touch"
+      },
       "screens": [
         "/static/img/projects/eb-theme/eb-elation-flat-touch-landingpage.jpg",
         "/static/img/projects/eb-theme/eb-elation-flat-touch-homepage.jpg",
@@ -729,7 +759,10 @@
     "11eleven": {
       "index": 11,
       "important": false,
-      "url": "indigo.luc.edu",
+      "link": {
+        "active": false,
+        "url": "indigo.luc.edu"
+      },
       "screens": [
         "/static/img/projects/luc/02-phone.jpg",
         "/static/img/projects/luc/02-desktop.jpg",
@@ -770,7 +803,10 @@
     "12twelve": {
       "index": 12,
       "important": true,
-      "url": "elationbase.com/jquery",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/jquery"
+      },
       "screens": [
         "/static/img/projects/eb-jq/eb-jquery-home.jpg",
         "/static/img/projects/eb-jq/eb-jquery-pass-home.jpg",
