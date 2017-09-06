@@ -15,96 +15,96 @@
       </transition>
 
       <transition name="grow">
-      <div v-if="show" class="project__body test">
-        <section class="project__body__info js-elementTop" v-bind:class="{ fixed: isFixed }">
-          <ul>
-            <li>
-              <legend>Project</legend>
-              <p v-text="projectPass.name"></p>
-            </li>
-            <li>
-              <legend>Company</legend>
-              <p v-text="projectPass.company"></p>
-            </li>
-            <li>
-              <legend>Role</legend>
-              <p v-for="role in projectPass.roles" :key="role.key" v-text="role"></p>
-            </li>
-            <li>
-              <legend>Date Released</legend>
-              <p v-text="projectPass.released"></p>
-            </li>
-          </ul>
-        </section>
-        <section class="project__body__description">
-          <div class="project__body__description__block">
-            <div class="project__body__description__block__content">
-              <h2 v-text="projectPass.url"></h2>
-            </div>
-            <i class="stem__sprite stem__sprite--space stem__sprite--space-top"></i>
-          </div>
-          <div class="project__body__description__block">
-            <i class="stem__sprite stem__sprite--research"></i>
-            <i class="stem__sprite stem__sprite--space"></i>
+        <div v-if="show" class="project__body test">
+          <section class="project__body__info js-elementTop" v-bind:class="{ fixed: isFixed }">
+            <ul>
+              <li>
+                <legend>Project</legend>
+                <p v-text="projectPass.name"></p>
+              </li>
+              <li>
+                <legend>Company</legend>
+                <p v-text="projectPass.company"></p>
+              </li>
+              <li>
+                <legend>Role</legend>
+                <p v-for="role in projectPass.roles" :key="role.key" v-text="role"></p>
+              </li>
+              <li>
+                <legend>Date Released</legend>
+                <p v-text="projectPass.released"></p>
+              </li>
+            </ul>
+          </section>
+          <section class="project__body__description">
+            <div class="project__body__description__block">
               <div class="project__body__description__block__content">
-                <h3 class="eb-type-h3">Introduction</h3>
-                <p>{{projectPass.body}}</p>
+                <h2 v-text="projectPass.url"></h2>
               </div>
-          </div>
-          <div class="project__body__description__block">
-            <i class="stem__sprite stem__sprite--architecture"></i>
-            <i class="stem__sprite stem__sprite--space"></i>
+              <i class="stem__sprite stem__sprite--space stem__sprite--space-top"></i>
+            </div>
+            <div class="project__body__description__block">
+              <i class="stem__sprite stem__sprite--research"></i>
+              <i class="stem__sprite stem__sprite--space"></i>
+                <div class="project__body__description__block__content">
+                  <h3 class="eb-type-h3">Introduction</h3>
+                  <p v-text="projectPass.body"></p>
+                </div>
+            </div>
+            <div class="project__body__description__block">
+              <i class="stem__sprite stem__sprite--architecture"></i>
+              <i class="stem__sprite stem__sprite--space"></i>
+                <div class="project__body__description__block__content">
+                  <h3 class="eb-type-h3">Design</h3>
+                  <legend>Color Palette</legend>
+                  <ul class="project__palette">
+                    <li v-for="color in projectPass.colors" :key="color.key" :style="{ backgroundColor: color }">
+                      <span v-text="color"></span>
+                    </li>
+                  </ul>
+                  <legend>Typography</legend>
+                  <ul class="project__type" :style="{ fontFamily: projectPass.font.family, fontWeight: projectPass.font.weight }">
+                    <li v-text="projectPass.font.face"></li>
+                    <li>ABCDEFGHIJKLMNOPQRSTVWXYZ</li>
+                    <li>abcdefghijklmnopqrstvwxyz</li>
+                    <li>123456789</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="project__body__description__block">
+              <i class="stem__sprite stem__sprite--code"></i>
+              <i class="stem__sprite stem__sprite--space"></i>
+                <div class="project__body__description__block__content">
+                  <h3 class="eb-type-h3">Code Stack</h3>
+                  <ul class="project__stack">
+                    <li v-for="stack in projectPass.stack" :key="stack.key">
+                      <svg :class="stack.icon">
+                        <use v-bind="{'xlink:href':'#'+ stack.icon}"></use>
+                      </svg>
+                      <p v-text="stack.title"></p>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="project__body__description__block">
+              <i class="stem__sprite stem__sprite--design"></i>
+              <i class="stem__sprite stem__sprite--space"></i>
               <div class="project__body__description__block__content">
-                <h3 class="eb-type-h3">Design</h3>
-                <legend>Color Palette</legend>
-                <ul class="project__palette">
-                  <li v-for="color in projectPass.colors" :key="color.key" :style="{ backgroundColor: color }">
-                    <span>{{color}}</span>
+                <h3 class="eb-type-h3">Screens</h3>
+                <ul class="project__screens">
+                  <li v-for="screen in projectPass.screens" :key="screen.key">
+                    <a :href="screen" target="_blank">
+                      <img :src="screen" alt="">
+                    </a>
                   </li>
                 </ul>
-                <legend>Typography</legend>
-                <ul class="project__type" :style="{ fontFamily: projectPass.font.family, fontWeight: projectPass.font.weight }">
-                  <li v-text="projectPass.font.face"></li>
-                  <li>ABCDEFGHIJKLMNOPQRSTVWXYZ</li>
-                  <li>abcdefghijklmnopqrstvwxyz</li>
-                  <li>123456789</li>
-                </ul>
               </div>
-          </div>
-          <div class="project__body__description__block">
-            <i class="stem__sprite stem__sprite--code"></i>
-            <i class="stem__sprite stem__sprite--space"></i>
-              <div class="project__body__description__block__content">
-                <h3 class="eb-type-h3">Code Stack</h3>
-                <ul class="project__stack">
-                  <li v-for="stack in projectPass.stack" :key="stack.key">
-                    <svg :class="stack.icon">
-                      <use v-bind="{'xlink:href':'#'+ stack.icon}"></use>
-                    </svg>
-                    <p v-text="stack.title"></p>
-                  </li>
-                </ul>
-              </div>
-          </div>
-          <div class="project__body__description__block">
-            <i class="stem__sprite stem__sprite--design"></i>
-            <i class="stem__sprite stem__sprite--space"></i>
-            <div class="project__body__description__block__content">
-              <h3 class="eb-type-h3">Screens</h3>
-              <ul class="project__screens">
-                <li v-for="screen in projectPass.screens" :key="screen.key">
-                  <a :href="screen" target="_blank">
-                    <img :src="screen" alt="">
-                  </a>
-                </li>
-              </ul>
+              <i class="stem__sprite stem__sprite--end"></i>
+              <a href="#" v-on:click.prevent="toTop"> Back to Top</a>
             </div>
-            <i class="stem__sprite stem__sprite--end"></i>
-            <a href="#" v-on:click.prevent="toTop"> Back to Top</a>
-          </div>
-        </section>
-      </div>
-    </transition>
+          </section>
+        </div>
+      </transition>
 
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="icon-sass" viewBox="0 0 300 300">
@@ -163,6 +163,8 @@ export default {
       this.show = true;
       this.getWindowWidth();
       window.addEventListener('resize', this.getWindowWidth);
+      window.addEventListener('hashchange', this.hashChange, false);
+      window.location.hash = `/${this.projectPass.name}`;
       setTimeout(() => {
         this.eleTop = this.$el.querySelector('.js-elementTop').offsetTop;
         this.stickInfo();
@@ -172,6 +174,11 @@ export default {
   methods: {
     hideProject() {
       this.$emit('projectHide');
+    },
+    hashChange() {
+      if (window.location.hash === '') {
+        this.$emit('projectHide');
+      }
     },
     toTop() {
       if (window.scrollY !== 0) {

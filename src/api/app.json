@@ -139,7 +139,7 @@
         "/static/img/projects/kaplan-portfolio/01.jpg"
       ],
       "pictureHome": "/static/img/projects/kaplan-portfolio/thumb.jpg",
-      "name": "Kaplan Portfolio Assessment",
+      "name": "Kaplan-Portfolio-Assessment",
       "company": "Kaplan University",
       "project": "Portfolio Assessment",
       "roles": [
@@ -207,9 +207,9 @@
         "/static/img/projects/bhi/bhi-lecture-series2.jpg"
       ],
       "pictureHome": "/static/img/projects/bhi/thumb.jpg",
-      "name": "Brain an Owners Guide",
+      "name": "The-Brain-an-Owners-Guide",
       "company": "Center for the Brain Health",
-      "project": "Brain: an Owners Guide",
+      "project": "The Brain: an Owners Guide",
       "roles": [
         "UX Design",
         "Front-end Developemnt"
@@ -268,7 +268,7 @@
         "/static/img/projects/vv/home-ipad-nav.jpg"
       ],
       "pictureHome": "/static/img/projects/vv/thumb.jpg",
-      "name": "Kaplan Visionary Voices",
+      "name": "Kaplan-Visionary-Voices",
       "company": "Kaplan Inc.",
       "project": "Visionary Voices",
       "roles": [
@@ -327,7 +327,7 @@
         "/static/img/projects/chewy/chewy-orders.jpg"
       ],
       "pictureHome": "/static/img/projects/chewy/thumb.jpg",
-      "name": "Chewy Store Front",
+      "name": "Chewy-StoreFront",
       "company": "Chewy.com",
       "project": "Store Front",
       "roles": [
@@ -399,7 +399,7 @@
         "/static/img/projects/redskins/home2.jpg"
       ],
       "pictureHome": "/static/img/projects/redskins/thumb.jpg",
-      "name": "Kaplan Washington Redskins",
+      "name": "Kaplan-Washington-Redskins",
       "company": "Washington Redskins",
       "project": "Playbook for Success",
       "roles": [
@@ -439,7 +439,7 @@
         "/static/img/projects/aarp/Home-02.jpg"
       ],
       "pictureHome": "/static/img/projects/aarp/thumb.jpg",
-      "name": "AARP TEK",
+      "name": "AARP-TEK",
       "company": "AARP",
       "project": "Technology Education Knowledge",
       "roles": [
@@ -484,7 +484,7 @@
         "/static/img/projects/pfb/07-contact-light-s.jpg"
       ],
       "pictureHome": "/static/img/projects/pfb/thumb.jpg",
-      "name": "EB Private Phonebook",
+      "name": "EB-Private-Phonebook",
       "company": "ElationBase",
       "project": "Private Phonebook",
       "roles": [
@@ -549,7 +549,7 @@
         "/static/img/projects/cw-ui/styleguide-home.jpg"
       ],
       "pictureHome": "/static/img/projects/cw-ui/thumb.jpg",
-      "name": "Chewy Style Guide",
+      "name": "Chewy-Style-Guide",
       "company": "Chewy Inc.",
       "project": "Style Guide / Component Library",
       "roles": [
@@ -614,7 +614,7 @@
         "/static/img/projects/openlearning/openlearning-instructors.jpg"
       ],
       "pictureHome": "/static/img/projects/openlearning/thumb.jpg",
-      "name": "Kaplan Open Learning",
+      "name": "Kaplan-Open-College",
       "company": "Kaplan University",
       "project": "Open College",
       "roles": [
@@ -676,7 +676,7 @@
         "/static/img/projects/eb-theme/eb-elation-flat-touch-productpage.jpg"
       ],
       "pictureHome": "/static/img/projects/eb-theme/thumb.jpg",
-      "name": "EB Themes",
+      "name": "EB-Themes",
       "company": "ElationBase",
       "project": "Custom Themes",
       "roles": [
@@ -737,7 +737,7 @@
         "/static/img/projects/luc/03.jpg"
       ],
       "pictureHome": "/static/img/projects/luc/thumb.jpg",
-      "name": "Indigo Learning Platform",
+      "name": "Indigo-Learning-Platform",
       "company": "Loyola University Chicago",
       "project": "Loyola University Indigo",
       "roles": [
@@ -778,7 +778,7 @@
         "/static/img/projects/eb-jq/eb-jquery-nav-usage.jpg"
       ],
       "pictureHome": "/static/img/projects/eb-jq/thumb.jpg",
-      "name": "EB jQuery Plugins",
+      "name": "EB-jQuery-Plugins",
       "company": "ElationBase",
       "project": "Custom jQuery Plugins",
       "roles": [
