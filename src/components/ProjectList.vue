@@ -91,7 +91,8 @@
 <style lang="scss">
 @import "../scss/utilities/base";
 
-// vars
+$projectSize: 200px;
+
 .projects {
   display: flex;
   flex-flow: row wrap;
@@ -134,17 +135,32 @@
     &__project {
       overflow: hidden;
       position: relative;
-      color: #fff;
+      color: $color-white;
       min-height: 300px;
+      @include phone {
+        min-height: $projectSize;
+        &--x2 {
+          min-height: $projectSize * 2;
+        }
+      };
+      @include tablet {
+        min-height: $projectSize + 50;
+        &--x2 {
+          min-height: $projectSize * 2 + 100;
+        }
+      };
+      @include large {
+        min-height: $projectSize + 100;
+        &--x2 {
+          min-height: $projectSize * 2 + 200;
+        }
+      };
       margin: 2rem 1rem;
       cursor: pointer;
-      &--x2 {
-        min-height: 600px;
-      }
       h2 {
         margin-bottom: 5px;
         line-height: 1;
-        margin-top: 200px;
+        margin-top: $projectSize;
         opacity: 0;
         transition: all 0.8s ease-out;
         color: $color-white;
@@ -152,7 +168,7 @@
         will-change: margin-top, opacity;
       }
       p {
-        margin-top: 200px;
+        margin-top: $projectSize;
         line-height: 1;
         opacity: 0;
         transition: all 1.3s ease-out;

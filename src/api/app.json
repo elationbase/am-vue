@@ -132,14 +132,17 @@
     "01one": {
       "index": 1,
       "important": false,
-      "url": "portfolio.kaplan.edu",
+      "link": {
+        "active": true,
+        "url": "portfolio.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/kaplan-portfolio/01-phone.jpg",
         "/static/img/projects/kaplan-portfolio/01-tablet.jpg",
         "/static/img/projects/kaplan-portfolio/01.jpg"
       ],
       "pictureHome": "/static/img/projects/kaplan-portfolio/thumb.jpg",
-      "name": "Kaplan Portfolio Assessment",
+      "name": "Kaplan-Portfolio-Assessment",
       "company": "Kaplan University",
       "project": "Portfolio Assessment",
       "roles": [
@@ -201,15 +204,18 @@
     "02two": {
       "index": 2,
       "important": true,
-      "url": "private",
+      "link": {
+        "active": false,
+        "url": "bhi.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/bhi/bhi-lecture-series1.jpg",
         "/static/img/projects/bhi/bhi-lecture-series2.jpg"
       ],
       "pictureHome": "/static/img/projects/bhi/thumb.jpg",
-      "name": "Brain an Owners Guide",
+      "name": "The-Brain-an-Owners-Guide",
       "company": "Center for the Brain Health",
-      "project": "Brain: an Owners Guide",
+      "project": "The Brain: an Owners Guide",
       "roles": [
         "UX Design",
         "Front-end Developemnt"
@@ -258,7 +264,10 @@
     "03three": {
       "index": 3,
       "important": false,
-      "url": "visionaryvoices.kaplan.edu",
+      "link": {
+        "active": false,
+        "url": "visionaryvoices.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/vv/home.jpg",
         "/static/img/projects/vv/categories.jpg",
@@ -268,7 +277,7 @@
         "/static/img/projects/vv/home-ipad-nav.jpg"
       ],
       "pictureHome": "/static/img/projects/vv/thumb.jpg",
-      "name": "Kaplan Visionary Voices",
+      "name": "Kaplan-Visionary-Voices",
       "company": "Kaplan Inc.",
       "project": "Visionary Voices",
       "roles": [
@@ -317,7 +326,10 @@
     "04four": {
       "index": 4,
       "important": true,
-      "url": "chewy.com",
+      "link": {
+        "active": true,
+        "url": "www.chewy.com"
+      },
       "screens": [
         "/static/img/projects/chewy/chewy-product-phone.jpg",
         "/static/img/projects/chewy/product-extended-page.jpg",
@@ -327,7 +339,7 @@
         "/static/img/projects/chewy/chewy-orders.jpg"
       ],
       "pictureHome": "/static/img/projects/chewy/thumb.jpg",
-      "name": "Chewy Store Front",
+      "name": "Chewy-StoreFront",
       "company": "Chewy.com",
       "project": "Store Front",
       "roles": [
@@ -393,13 +405,16 @@
     "05five": {
       "index": 5,
       "important": false,
-      "url": "redskins.kaplan.edu",
+      "link": {
+        "active": false,
+        "url": "redskins.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/redskins/home1.jpg",
         "/static/img/projects/redskins/home2.jpg"
       ],
       "pictureHome": "/static/img/projects/redskins/thumb.jpg",
-      "name": "Kaplan Washington Redskins",
+      "name": "Kaplan-Washington-Redskins",
       "company": "Washington Redskins",
       "project": "Playbook for Success",
       "roles": [
@@ -432,14 +447,17 @@
     "06six": {
       "index": 6,
       "important": false,
-      "url": "aarptek.aarp.org",
+      "link": {
+        "active": false,
+        "url": "aarptek.aarp.org"
+      },
       "screens": [
         "/static/img/projects/aarp/Home-02-phone.jpg",
         "/static/img/projects/aarp/Home-02-tablet.jpg",
         "/static/img/projects/aarp/Home-02.jpg"
       ],
       "pictureHome": "/static/img/projects/aarp/thumb.jpg",
-      "name": "AARP TEK",
+      "name": "AARP-TEK",
       "company": "AARP",
       "project": "Technology Education Knowledge",
       "roles": [
@@ -472,7 +490,10 @@
     "07seven": {
       "index": 7,
       "important": false,
-      "url": "elationbase.com/apps",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/apps"
+      },
       "screens": [
         "/static/img/projects/pfb/elationbase-pphonebook-home.jpg",
         "/static/img/projects/pfb/logo-private-phonebook.jpg",
@@ -484,7 +505,7 @@
         "/static/img/projects/pfb/07-contact-light-s.jpg"
       ],
       "pictureHome": "/static/img/projects/pfb/thumb.jpg",
-      "name": "EB Private Phonebook",
+      "name": "EB-Private-Phonebook",
       "company": "ElationBase",
       "project": "Private Phonebook",
       "roles": [
@@ -542,14 +563,17 @@
     "08eight": {
       "index": 8,
       "important": true,
-      "url": "styleguide.chewy.com",
+      "link": {
+        "active": false,
+        "url": "styleguide.chewy.com"
+      },
       "screens": [
         "/static/img/projects/cw-ui/styleguide-design-tablet.jpg",
         "/static/img/projects/cw-ui/styleguide-javascript.jpg",
         "/static/img/projects/cw-ui/styleguide-home.jpg"
       ],
       "pictureHome": "/static/img/projects/cw-ui/thumb.jpg",
-      "name": "Chewy Style Guide",
+      "name": "Chewy-Style-Guide",
       "company": "Chewy Inc.",
       "project": "Style Guide / Component Library",
       "roles": [
@@ -607,14 +631,17 @@
     "09nine": {
       "index": 9,
       "important": false,
-      "url": "openlearning.kaplan.edu",
+      "link": {
+        "active": true,
+        "url": "opencollege.kaplan.edu"
+      },
       "screens": [
         "/static/img/projects/openlearning/openlearning-homepage.jpg",
         "/static/img/projects/openlearning/openlearning-courses.jpg",
         "/static/img/projects/openlearning/openlearning-instructors.jpg"
       ],
       "pictureHome": "/static/img/projects/openlearning/thumb.jpg",
-      "name": "Kaplan Open Learning",
+      "name": "Kaplan-Open-College",
       "company": "Kaplan University",
       "project": "Open College",
       "roles": [
@@ -668,7 +695,10 @@
     "10ten": {
       "index": 10,
       "important": false,
-      "url": "elationbase.com/elation-flat-touch",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/elation-flat-touch"
+      },
       "screens": [
         "/static/img/projects/eb-theme/eb-elation-flat-touch-landingpage.jpg",
         "/static/img/projects/eb-theme/eb-elation-flat-touch-homepage.jpg",
@@ -676,7 +706,7 @@
         "/static/img/projects/eb-theme/eb-elation-flat-touch-productpage.jpg"
       ],
       "pictureHome": "/static/img/projects/eb-theme/thumb.jpg",
-      "name": "EB Themes",
+      "name": "EB-Themes",
       "company": "ElationBase",
       "project": "Custom Themes",
       "roles": [
@@ -729,7 +759,10 @@
     "11eleven": {
       "index": 11,
       "important": false,
-      "url": "indigo.luc.edu",
+      "link": {
+        "active": false,
+        "url": "indigo.luc.edu"
+      },
       "screens": [
         "/static/img/projects/luc/02-phone.jpg",
         "/static/img/projects/luc/02-desktop.jpg",
@@ -737,7 +770,7 @@
         "/static/img/projects/luc/03.jpg"
       ],
       "pictureHome": "/static/img/projects/luc/thumb.jpg",
-      "name": "Indigo Learning Platform",
+      "name": "Indigo-Learning-Platform",
       "company": "Loyola University Chicago",
       "project": "Loyola University Indigo",
       "roles": [
@@ -770,7 +803,10 @@
     "12twelve": {
       "index": 12,
       "important": true,
-      "url": "elationbase.com/jquery",
+      "link": {
+        "active": true,
+        "url": "elationbase.com/jquery"
+      },
       "screens": [
         "/static/img/projects/eb-jq/eb-jquery-home.jpg",
         "/static/img/projects/eb-jq/eb-jquery-pass-home.jpg",
@@ -778,7 +814,7 @@
         "/static/img/projects/eb-jq/eb-jquery-nav-usage.jpg"
       ],
       "pictureHome": "/static/img/projects/eb-jq/thumb.jpg",
-      "name": "EB jQuery Plugins",
+      "name": "EB-jQuery-Plugins",
       "company": "ElationBase",
       "project": "Custom jQuery Plugins",
       "roles": [

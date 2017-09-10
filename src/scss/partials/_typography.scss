@@ -49,11 +49,11 @@ body {
       font-weight: theme-get(weight, extra);
       color: theme-get(text, color, blue);
       @include small {
-        font-size: theme-get(text, size, bigger);
+        font-size: theme-get(text, size, lg);
         margin-bottom: theme-get(space, none);
       }
       @include large {
-        font-size: theme-get(text, size, large);
+        font-size: theme-get(text, size, bigger);
         margin-bottom: theme-get(space, none);
       }
     }
@@ -63,7 +63,7 @@ body {
     color: theme-get(text, color, light);
     margin-bottom: theme-get(space, normal);
     @include small {
-      font-size: theme-get(text, size, bigger);
+      font-size: theme-get(text, size, lg);
     }
     @include large {
       font-size: theme-get(text, size, bigger);

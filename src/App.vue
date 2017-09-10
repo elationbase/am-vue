@@ -94,16 +94,28 @@
         this.positionY = y;
       },
       hideProject() {
+        window.location.hash = '';
         this.selectedProject = false;
         this.project = {};
         window.scroll(0, this.positionY);
+      },
+      hashChangeCheck() {
+        const newHash = window.location.hash;
+        const newPath = newHash.slice(2);
+        Object.keys(this.fbProjects).forEach((key) => {
+          if (newPath === this.fbProjects[key].name) {
+            this.showProject(this.fbProjects[key]);
+          }
+        });
       },
     },
     mounted() {
       setTimeout(() => {
         this.firstLoad = false;
         this.ready = true;
-      }, 4000);
+        this.hashChangeCheck();
+        window.addEventListener('hashchange', this.hashChangeCheck, false);
+      }, 2000);
     },
   };
 </script>

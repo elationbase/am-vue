@@ -55,7 +55,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: auto;
+  margin: -2px auto 10px auto;
   @include phone {
     padding: theme-get(space, big);
   }
@@ -77,6 +77,8 @@
   }
   p {
     color: $color-light;
+    font-weight: theme-get(weight, light);
+    font-size: theme-get(text, size, mid);
   }
   &__list {
     display: flex;
