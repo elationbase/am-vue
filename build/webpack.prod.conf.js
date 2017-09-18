@@ -8,6 +8,9 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+
+const PUBLIC_PATH = 'https://alvaro-montero.appspot.com/';
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -24,7 +27,8 @@ var webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
+    publicPath: PUBLIC_PATH
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -94,7 +98,17 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new SWPrecacheWebpackPlugin(
+      {
+        cacheId: 'alvaro-montero',
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'service-worker.js',
+        minify: true,
+        navigateFallback: PUBLIC_PATH + 'index.html',
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      }
+    )
   ]
 })
 
