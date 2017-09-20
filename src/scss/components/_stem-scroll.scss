@@ -26,7 +26,8 @@ $space: 50px;
     z-index: z-index(stem1);
   }
   &__sprite {
-    background: url("/static/img/projects/temp-sprite.png");
+    background: url("/static/img/icons-project.svg");
+    background-size: 350px 50px;
     width: $space;
     position: absolute;
     z-index: z-index(stem2);
