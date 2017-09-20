@@ -115,7 +115,7 @@
         this.ready = true;
         this.hashChangeCheck();
         window.addEventListener('hashchange', this.hashChangeCheck, false);
-      }, 2000);
+      }, 1000);
     },
   };
 </script>

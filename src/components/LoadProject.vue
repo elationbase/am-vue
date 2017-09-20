@@ -1,7 +1,7 @@
 <template>
   <div class="eb-loader" :class="{'eb-loader--active' : ready}">
     <div class="eb-loader__item eb-loader__item--first"></div>
-    <div class="leb-oader__item eb-loader__item--second"></div>
+    <div class="eb-loader__item eb-loader__item--second"></div>
     <div class="eb-loader__item eb-loader__item--third"></div>
     <div class="eb-loader__item eb-loader__item--forth"></div>
   </div>
@@ -66,6 +66,9 @@
     display: block;
     width: 0;
     height: 0;
+    -webkit-backface-visibility: hidden;
+  	-webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
     &--first {
       z-index: z-index(project1);
       opacity: 0.7;
