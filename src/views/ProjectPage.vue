@@ -101,7 +101,7 @@
               </ul>
             </div>
             <i class="stem__sprite stem__sprite--end"></i>
-            <a href="#" v-on:click.prevent="toTop"> Back to Top</a>
+            <a href="#" v-on:click.prevent="toTop" class="to-top"> Back to Top</a>
           </div>
         </section>
       </div>
@@ -448,7 +448,14 @@ export default {
         }
         img {
           max-width: 100%;
+          display: block;
         }
+      }
+    }
+    .to-top {
+      @include small {
+        text-align: center;
+        display: block;
       }
     }
   }
