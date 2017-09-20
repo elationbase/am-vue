@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import VueFire from 'vuefire';
+import VueClazyLoad from 'vue-clazy-load';
 import App from './App';
 
 Vue.config.productionTip = false;
 Vue.use(VueFire);
+Vue.use(VueClazyLoad);
 
 
 /* eslint-disable no-new */

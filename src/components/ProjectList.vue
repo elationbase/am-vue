@@ -3,8 +3,15 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="project in projectsData" :key="project.key" v-if="project.index <= projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
-            <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();" :alt="project.project">
+            <div class="projects__row__project__photo">
+              <clazy-load :src="project.pictureHome">
+                <img :src="project.pictureHome" slot="image">
+                <div slot="placeholder">
+                  <ImgLoader></ImgLoader>
+                </div>
+              </clazy-load>
+            </div>
             <div class="projects__row__project__slide">
               <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
@@ -14,8 +21,15 @@
       </div>
       <div class="projects__row">
         <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectQuarter && project.index <= projectSplit" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
-            <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();" :alt="project.project">
+            <div class="projects__row__project__photo">
+              <clazy-load :src="project.pictureHome">
+                <img :src="project.pictureHome" slot="image">
+                <div slot="placeholder">
+                  <ImgLoader></ImgLoader>
+                </div>
+              </clazy-load>
+            </div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
@@ -27,8 +41,15 @@
     <div class="projects__group">
       <div class="projects__row">
         <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectSplit && project.index <= projectSplit + projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
-            <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();" :alt="project.project">
+            <div class="projects__row__project__photo">
+              <clazy-load :src="project.pictureHome">
+                <img :src="project.pictureHome" slot="image">
+                <div slot="placeholder">
+                  <ImgLoader></ImgLoader>
+                </div>
+              </clazy-load>
+            </div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
@@ -38,8 +59,15 @@
       </div>
       <div class="projects__row">
         <section v-for="project in projectsData" :key="project.key" v-if="project.index > projectSplit + projectQuarter" class="projects__row__project" :class="{ 'projects__row__project--x2': project.important }">
-          <a href="#" v-on:click.prevent="showProject(project); setPositionY();">
-            <div class="projects__row__project__photo" :style="{ backgroundImage: 'url(' + project.pictureHome + ')' }"></div>
+          <a href="#" v-on:click.prevent="showProject(project); setPositionY();" :alt="project.project">
+            <div class="projects__row__project__photo">
+              <clazy-load :src="project.pictureHome">
+                <img :src="project.pictureHome" slot="image">
+                <div slot="placeholder">
+                  <ImgLoader></ImgLoader>
+                </div>
+              </clazy-load>
+            </div>
             <div class="projects__row__project__slide">
             <h2 v-text="project.company"></h2>
               <p v-text="project.project"></p>
@@ -53,7 +81,12 @@
 </template>
 
 <script>
+  import ImgLoader from '@/components/LoadProjectImg';
+
   export default {
+    components: {
+      ImgLoader,
+    },
     props: [
       'projectsData',
     ],
@@ -181,6 +214,19 @@ $projectSize: 200px;
         transition: 1s;
         transform-origin: center;
         will-change: transform, filter;
+        background-color: $color-lt-gray;
+        > div {
+          @include full('absolute');
+        }
+        img {
+          animation: showImg 1s;
+          min-width: 100%;
+          min-height: 100%;
+        }
+        .loaded img {
+          opacity: 1;
+          visibility: visible;
+        }
       }
       &__slide {
         @include full('absolute');

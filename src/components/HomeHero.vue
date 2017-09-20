@@ -164,7 +164,13 @@
             <path class="st-fat st-fat-7" d="M1055,210.3l15.18-6.42s-4.28-7.95-11.1-4.28-5.6,18.23,4,18.23c7.64,0,8.27-4.38,8.27-4.38"/>
             </svg>
         </li>
-        <li><img class="hero__images__bg" src="/static/img/hero-bg.jpg" alt=""></li>
+        <li>
+          <picture>
+            <source srcset="/static/img/hero-bg.webp" type="image/webp">
+            <source srcset="/static/img/hero-bg.jpg" type="image/jpeg">
+            <img class="hero__images__bg" src="/static/img/hero-bg.jpg">
+          </picture>
+        </li>
       </ul>
   </section>
 </template>
