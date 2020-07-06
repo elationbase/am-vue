@@ -10,7 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
-const PUBLIC_PATH = 'https://alvaro-montero.appspot.com/';
+const PUBLIC_PATH = '/';
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')

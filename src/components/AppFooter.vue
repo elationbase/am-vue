@@ -2,7 +2,7 @@
   <footer class="main-footer">
     <div class="main-footer__wrap">
       <eb-logo></eb-logo>
-      <p><small>Designed and Coded with <span>&#10084;</span> by <span>Alvaro Montero</span> 2017 for <span>Google</span>.</small></p>
+      <p><small>Designed and Coded with <span>&#10084;</span> by <span>Alvaro Montero</span> 2017.</small></p>
       <p><small>The code repo for this page can be found <span>@</span><a href="https://github.com/elationbase/am-vue">github.com</a></small></p>
 
       <p class="dark"><small>Source Technology used: Sketch + SVG + HTML + SCSS + JS + VueJS + Firebase + GitHub.</small></p>
@@ -12,12 +12,10 @@
 </template>
 
 <script>
-  import EbMedia from '@/components/EbMedia';
   import EbLogo from '@/components/EbLogo';
 
   export default {
     components: {
-      EbMedia,
       EbLogo,
     },
   };

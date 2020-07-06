@@ -3,9 +3,7 @@
     <h2 class="eb-type-h2">What People Say About Me</h2>
     <ul>
       <li v-for="comment in commentsData" :key="comment.key">
-        <div class="comments__container">
-          <p v-text="comment.comment"></p>
-        </div>
+        <p>{{comment.comment}}<span>{{comment.user}}</span></p>
       </li>
     </ul>
   </div>
@@ -33,7 +31,7 @@
     text-align: center;
   }
   ul {
-  	width: 400%;
+  	width: 300%;
     margin-bottom: theme-get(space, normal);
     will-change: transition;
     animation: slide-animation 25s infinite;
@@ -44,7 +42,7 @@
   li {
   	float: left;
   	position: relative;
-  	width: 25%;
+  	width: 33.333333%;
   	display: inline-block;
   }
   p {
@@ -57,6 +55,11 @@
       padding-right: theme-get(space, bigger);
     }
     text-align: center;
+  }
+  span {
+    display: block;
+    color: theme-get(text, color, blue);
+    font-weight: theme-get(weight, bold);
   }
   &__container {
   	width: 100%;
