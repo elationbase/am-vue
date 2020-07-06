@@ -34,7 +34,7 @@
   	width: 300%;
     margin-bottom: theme-get(space, normal);
     will-change: transition;
-    animation: slide-animation 25s infinite;
+    animation: slide-animation 30s infinite;
     &:hover{
     	animation-play-state: paused;
     }
@@ -58,6 +58,7 @@
   }
   span {
     display: block;
+    margin-top: theme-get(space, normal);
     color: theme-get(text, color, blue);
     font-weight: theme-get(weight, bold);
   }

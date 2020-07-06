@@ -47,26 +47,20 @@
 }
 
 @keyframes slide-animation {
-	20% {
+	30% {
 	  margin-left: 0;
   }
-	25% {
+	35% {
 	  margin-left: -100%;
   }
-	45% {
+	60% {
 	  margin-left: -100%;
   }
-	50% {
+	65% {
 	  margin-left: -200%;
-  }
-	70% {
-	  margin-left: -200%;
-  }
-	75% {
-	  margin-left: -300%;
   }
 	98% {
-	  margin-left: -300%;
+	  margin-left: -200%;
   }
 	100% {
 	  margin-left: 0;
