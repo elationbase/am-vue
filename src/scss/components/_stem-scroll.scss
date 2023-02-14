@@ -3,7 +3,8 @@ $left: 30%;
 $space: 50px;
 
 .stem {
-  position: relative;
+  position: fixed;
+  left: 30%;
   height: 0px;
   z-index: z-index(off);
   &__color {

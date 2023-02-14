@@ -299,7 +299,7 @@ export default {
         float: left;
         margin-right: $space;
         &.fixed {
-          position: fixed;
+          position: sticky;
           top: 0;
         }
         ul {
